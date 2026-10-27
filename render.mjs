@@ -27,8 +27,9 @@ const C = {
   name: 'accent',
   group: 'ink',
   role: 'ink-muted',
-  prompt: 'accent',
+  prompt: 'cilantro prompt',
   fresh: 'cilantro',
+  bracket: 'salsa',
 }
 
 const vars = (tokens) => Object.entries(tokens).map(([k, v]) => `--${k}:${v};`).join('')
@@ -40,7 +41,7 @@ const STYLE = `
     .bar { fill: var(--wash) }
     .edge { stroke: var(--ink) }
     .label { font-size: 11px; font-weight: 500; letter-spacing: 0.14em }
-    .group { font-weight: 600 }
+    .group, .prompt { font-weight: 700 }
     .tick { font-size: 11px }
     .value { font-size: 11px; font-weight: 600 }
     .grid { stroke: var(--chart-grid) }
@@ -267,7 +268,7 @@ function svg(config, groups, table, days) {
   <rect class="window" x="0.5" y="0.5" width="${width - 1}" height="${height - 1}"/>
   <rect class="bar" x="1" y="1" width="${width - 2}" height="${BAR_H - 1}"/>
   <line class="edge" x1="0" x2="${width}" y1="${BAR_H + 0.5}" y2="${BAR_H + 0.5}"/>
-  <text x="${PAD_X}" y="${BAR_H / 2 + 4}"><tspan class="ink label">${esc(`[ ${config.title.toUpperCase()} ]`)}</tspan><tspan class="${C.dim} label">${esc(` ${repoCount}`)}</tspan></text>
+  <text x="${PAD_X}" y="${BAR_H / 2 + 4}"><tspan class="${C.bracket} label">[ </tspan><tspan class="ink label">${esc(config.title.toUpperCase())}</tspan><tspan class="${C.bracket} label"> ]</tspan><tspan class="${C.dim} label">${esc(` ${repoCount}`)}</tspan></text>
   ${text}
   ${graph.markup}
 </svg>

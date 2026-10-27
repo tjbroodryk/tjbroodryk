@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="846" height="772" viewBox="0 0 846 772" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace" font-size="14" xml:space="preserve">
   <style>
-    svg { --bg:#F4EEE4;--surface:#FBF7F0;--wash:#EBE2D3;--pine:#E3CDA8;--ink:#262440;--ink-muted:#5E5869;--ink-faint:#8A8496;--rule:#D9CFC0;--accent:#4D4F9E;--accent-tint:#E4E3F2;--salsa:#D9513F;--salsa-deep:#A63828;--chile:#B3313E;--chile-tint:#F8E1DA;--chile-gutter:#F2CFC6;--cilantro:#33684A;--cilantro-tint:#E2EDE3;--cilantro-gutter:#D3E4D6;--ochre:#7E560E;--cat-1:#4D4F9E;--cat-2:#D9513F;--cat-3:#2E9B7A;--cat-4:#8E6418;--cat-5:#B0539A;--seq-1:#E4E3F2;--seq-2:#B9BAE2;--seq-3:#8C8ECB;--seq-4:#5F62B0;--seq-5:#3A3C7E;--div-neg:#D9513F;--div-neg-2:#EBA394;--div-mid:#E2DBD0;--div-pos-2:#A3A5D6;--div-pos:#4D4F9E;--chart-grid:#E6DDCE;--chart-axis:#5E5869;--focus:#4D4F9E; }
-    @media (prefers-color-scheme: dark) { svg { --bg:#16152A;--surface:#1E1D36;--wash:#282746;--pine:#3E3826;--ink:#F4EEE4;--ink-muted:#A9A3B5;--ink-faint:#6E6884;--rule:#34324F;--accent:#9497EC;--accent-tint:#2A2A52;--salsa:#EE7560;--salsa-deep:#F4927F;--chile:#F07B86;--chile-tint:#3A1F2B;--chile-gutter:#4A2533;--cilantro:#6CC594;--cilantro-tint:#1C3329;--cilantro-gutter:#24402F;--ochre:#D9A447;--cat-1:#7A7DDA;--cat-2:#E5654C;--cat-3:#2FA882;--cat-4:#B98A33;--cat-5:#C467B2;--seq-1:#2A2A52;--seq-2:#3E4080;--seq-3:#5A5DB0;--seq-4:#7F82D8;--seq-5:#B4B6F2;--div-neg:#E5654C;--div-neg-2:#8A4B45;--div-mid:#3A3852;--div-pos-2:#4E5094;--div-pos:#7A7DDA;--chart-grid:#2C2A48;--chart-axis:#A9A3B5;--focus:#9497EC; } }
+    svg { --bg:#F4EEE4;--surface:#FBF7F0;--wash:#EBE2D3;--pine:#E3CDA8;--ink:#262440;--ink-muted:#5E5869;--ink-faint:#8A8496;--rule:#D9CFC0;--accent:#4D4F9E;--accent-tint:#E4E3F2;--salsa:#D9513F;--salsa-deep:#A63828;--salsa-tint:#FBE3D8;--chile:#B3313E;--chile-tint:#F8E1DA;--chile-gutter:#F2CFC6;--chile-deep:#9A2433;--cilantro:#33684A;--cilantro-tint:#E2EDE3;--cilantro-gutter:#D3E4D6;--cilantro-bright:#2E9B7A;--ochre:#7E560E;--cat-1:#2E9B7A;--cat-2:#D9513F;--cat-3:#4D4F9E;--cat-4:#8E6418;--cat-5:#B0539A;--seq-1:#E4E3F2;--seq-2:#B9BAE2;--seq-3:#8C8ECB;--seq-4:#5F62B0;--seq-5:#3A3C7E;--seqg-1:#DDEFE6;--seqg-2:#A9D6C0;--seqg-3:#6DB896;--seqg-4:#2E9B7A;--seqg-5:#1D6B53;--div-neg:#D9513F;--div-neg-2:#EBA394;--div-mid:#E2DBD0;--div-pos-2:#A3A5D6;--div-pos:#4D4F9E;--chart-grid:#E6DDCE;--chart-axis:#5E5869;--focus:#4D4F9E;--live:#2E9B7A;--success:#33684A;--attention:#D9513F;--error:#B3313E; }
+    @media (prefers-color-scheme: dark) { svg { --bg:#16152A;--surface:#1E1D36;--wash:#282746;--pine:#3E3826;--ink:#F4EEE4;--ink-muted:#A9A3B5;--ink-faint:#6E6884;--rule:#34324F;--accent:#9497EC;--accent-tint:#2A2A52;--salsa:#EE7560;--salsa-deep:#F4927F;--salsa-tint:#3D2420;--chile:#F07B86;--chile-tint:#3A1F2B;--chile-gutter:#4A2533;--chile-deep:#F59AA2;--cilantro:#6CC594;--cilantro-tint:#1C3329;--cilantro-gutter:#24402F;--cilantro-bright:#2FA882;--ochre:#D9A447;--cat-1:#2FA882;--cat-2:#E5654C;--cat-3:#7A7DDA;--cat-4:#B98A33;--cat-5:#C467B2;--seq-1:#2A2A52;--seq-2:#3E4080;--seq-3:#5A5DB0;--seq-4:#7F82D8;--seq-5:#B4B6F2;--seqg-1:#1C3329;--seqg-2:#24503F;--seqg-3:#2F7A5E;--seqg-4:#45A882;--seqg-5:#8AD8B5;--div-neg:#E5654C;--div-neg-2:#8A4B45;--div-mid:#3A3852;--div-pos-2:#4E5094;--div-pos:#7A7DDA;--chart-grid:#2C2A48;--chart-axis:#A9A3B5;--focus:#9497EC;--live:#2FA882;--success:#6CC594;--attention:#EE7560;--error:#F07B86; } }
     .bg { fill: var(--bg) }
     .surface { fill: var(--surface) }
     .wash { fill: var(--wash) }
@@ -14,12 +14,15 @@
     .accent-tint { fill: var(--accent-tint) }
     .salsa { fill: var(--salsa) }
     .salsa-deep { fill: var(--salsa-deep) }
+    .salsa-tint { fill: var(--salsa-tint) }
     .chile { fill: var(--chile) }
     .chile-tint { fill: var(--chile-tint) }
     .chile-gutter { fill: var(--chile-gutter) }
+    .chile-deep { fill: var(--chile-deep) }
     .cilantro { fill: var(--cilantro) }
     .cilantro-tint { fill: var(--cilantro-tint) }
     .cilantro-gutter { fill: var(--cilantro-gutter) }
+    .cilantro-bright { fill: var(--cilantro-bright) }
     .ochre { fill: var(--ochre) }
     .cat-1 { fill: var(--cat-1) }
     .cat-2 { fill: var(--cat-2) }
@@ -31,6 +34,11 @@
     .seq-3 { fill: var(--seq-3) }
     .seq-4 { fill: var(--seq-4) }
     .seq-5 { fill: var(--seq-5) }
+    .seqg-1 { fill: var(--seqg-1) }
+    .seqg-2 { fill: var(--seqg-2) }
+    .seqg-3 { fill: var(--seqg-3) }
+    .seqg-4 { fill: var(--seqg-4) }
+    .seqg-5 { fill: var(--seqg-5) }
     .div-neg { fill: var(--div-neg) }
     .div-neg-2 { fill: var(--div-neg-2) }
     .div-mid { fill: var(--div-mid) }
@@ -39,11 +47,15 @@
     .chart-grid { fill: var(--chart-grid) }
     .chart-axis { fill: var(--chart-axis) }
     .focus { fill: var(--focus) }
+    .live { fill: var(--live) }
+    .success { fill: var(--success) }
+    .attention { fill: var(--attention) }
+    .error { fill: var(--error) }
     .window { fill: var(--bg); stroke: var(--ink) }
     .bar { fill: var(--wash) }
     .edge { stroke: var(--ink) }
     .label { font-size: 11px; font-weight: 500; letter-spacing: 0.14em }
-    .group { font-weight: 600 }
+    .group, .prompt { font-weight: 700 }
     .tick { font-size: 11px }
     .value { font-size: 11px; font-weight: 600 }
     .grid { stroke: var(--chart-grid) }
@@ -53,8 +65,8 @@
   <rect class="window" x="0.5" y="0.5" width="845" height="771"/>
   <rect class="bar" x="1" y="1" width="844" height="39"/>
   <line class="edge" x1="0" x2="846" y1="40.5" y2="40.5"/>
-  <text x="32" y="24"><tspan class="ink label">[&#160;TJ@DEV:&#160;~/PROJECTS&#160;]</tspan><tspan class="ink-muted label">&#160;10</tspan></text>
-  <text x="32" y="76"><tspan class="accent">$&#160;</tspan><tspan class="ink">probe&#160;run&#160;--suite&#160;tjbroodryk</tspan></text>
+  <text x="32" y="24"><tspan class="salsa label">[ </tspan><tspan class="ink label">TJ@DEV:&#160;~/PROJECTS</tspan><tspan class="salsa label"> ]</tspan><tspan class="ink-muted label">&#160;10</tspan></text>
+  <text x="32" y="76"><tspan class="cilantro prompt">$&#160;</tspan><tspan class="ink">probe&#160;run&#160;--suite&#160;tjbroodryk</tspan></text>
   <text x="32" y="100"><tspan class="ink-muted">resolving&#160;suite&#160;...&#160;10&#160;repos&#160;in&#160;3&#160;groups</tspan></text>
   <text x="32" y="124"></text>
   <text x="32" y="148"><tspan class="ink-faint">+--------------------------+-----------------------+-----------+-------------+--------------+</tspan></text>
@@ -76,7 +88,7 @@
   <text x="32" y="532"><tspan class="ink-faint">|&#160;</tspan><tspan class="accent">omni&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink">Omni&#160;monorepo&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="cilantro">today&#160;&#160;&#160;&#160;</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink">&#160;&#160;&#160;&#160;0/30739</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink-muted">contributor&#160;</tspan><tspan class="ink-faint">&#160;|</tspan></text>
   <text x="32" y="556"><tspan class="ink-faint">+--------------------------+-----------------------+-----------+-------------+--------------+</tspan></text>
   <text x="32" y="580"></text>
-  <text x="32" y="604"><tspan class="accent">$&#160;</tspan><tspan class="ink">probe&#160;log&#160;--commits&#160;--per&#160;weekday&#160;--since&#160;90d</tspan></text>
+  <text x="32" y="604"><tspan class="cilantro prompt">$&#160;</tspan><tspan class="ink">probe&#160;log&#160;--commits&#160;--per&#160;weekday&#160;--since&#160;90d</tspan></text>
   <line class="baseline" x1="72" x2="813.2" y1="728" y2="728"/>
   <text class="ink-muted tick" x="64" y="732" text-anchor="end">0</text>
   <line class="grid" x1="72" x2="813.2" y1="680" y2="680"/>

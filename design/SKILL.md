@@ -34,10 +34,15 @@ The rules people notice when they're missing:
   figures for numbers; ligatures off in code.
 - Square: `--radius-0` everywhere. Panes are separated by 1px `--ink` rules,
   not shadows; `--shadow-pop` is only for floating layers.
-- Section labels: 11px uppercase, 0.14em tracking, in brackets with a muted
-  count, e.g. `[ CHANGES ] 8`.
-- `--accent` (indigo) is interaction and live state. `--salsa` is for what needs
-  a person, and only as fills or 24px+ type; small red text is `--salsa-deep`.
+- Section labels: 11px uppercase, 0.14em tracking, `--salsa` brackets and a
+  muted count, e.g. `[ CHANGES ] 8`.
+- Each colour has one job. Green (`--cilantro` text, `--cilantro-bright` fills;
+  aliases `--live`, `--success`) is live, running, passing or done, and the `$`
+  prompt. Orange (`--salsa` fills and 24px+ type, `--salsa-deep` small text,
+  `--salsa-tint` rows; alias `--attention`) is needs-you and active. Red
+  (`--chile`, `--chile-deep` on `--chile-tint`; alias `--error`) is errors and
+  destructive actions only. Indigo (`--accent`) is links, focus and selection.
+  `--ochre` is warning, always with a word or icon.
 - `--ink-faint` is never text. `--pine` is a highlight, never a text colour.
 - Voice is short, literal and lowercase where a terminal would be.
 
@@ -45,9 +50,11 @@ The rules people notice when they're missing:
 
 `README.md` has the full chart rules; the short version:
 
-- One series: `--cat-1`. Categories: `--cat-1` to `--cat-5` in fixed order,
-  never cycled; a sixth folds into "other". Magnitude: `--seq-1` to `--seq-5`.
-  Polarity: the `--div-*` ramp.
+- One series: `--cat-1` (jade green). Categories: `--cat-1` to `--cat-5` in
+  fixed order, never cycled; a sixth folds into "other". Magnitude and
+  heatmaps: the green `--seqg-1` to `--seqg-5`, or the indigo `--seq-1` to
+  `--seq-5` when green would wrongly read as good (errors, latency). Polarity:
+  the `--div-*` ramp.
 - Never use a status colour (cilantro, chile, ochre, salsa as a state) as a
   series.
 - Gridlines `--chart-grid`, baseline `--ink-faint`, axis text `--chart-axis`
