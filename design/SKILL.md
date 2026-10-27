@@ -1,6 +1,6 @@
 ---
 name: barrio-design
-description: TJ's design system, Barrio, for anything visual — charts, graphs, dashboards, Artifacts, HTML pages, SVGs, slides, matplotlib or plotly output. Load before writing any of them, alongside dataviz or artifact-design; Barrio's tokens, type and chart rules replace their palettes, fonts and radii.
+description: TJ's design system, Barrio, for anything visual — charts, graphs, diagrams (architecture, flow, sequence, Mermaid), dashboards, Artifacts, HTML pages, SVGs, slides, matplotlib or plotly output. Load before writing any of them, alongside dataviz, artifact-design or artifact-diagramming; Barrio's tokens, type and rules replace their palettes, fonts and radii.
 ---
 
 # Barrio
@@ -65,6 +65,29 @@ The rules people notice when they're missing:
 - Titles in `--font-display`, the unit in a subtitle. A single big number is a
   stat tile, not a chart.
 - One y-axis per chart; two series get a legend.
+
+## Diagrams
+
+`artifact-diagramming` decides what to draw and how to lay it out; Barrio
+decides how it looks.
+
+- Nodes: square boxes (`--radius-0`), `--surface` fill, 1px `--ink` border.
+  Group frames and swimlanes: `--wash` fill with a 1px `--rule` border and a
+  bracketed `label` title, e.g. `[ WORKER ]`.
+- Text: `--font-mono`, `--ink` for node names, `--ink-muted` for notes and
+  edge labels. Edge labels sit on a `--bg` knockout so lines don't cross text.
+- Edges: 1px `--ink-muted` with small solid arrowheads; dashed for async or
+  optional paths. The path being explained gets 2px `--accent`.
+- Colour only for meaning, using the UI jobs: `--cilantro` live or healthy,
+  `--salsa` needs attention, `--chile` failure, `--ochre` warning. Everything
+  else stays ink on surface.
+- Mermaid: set `theme: 'base'` and map `themeVariables` to the tokens
+  (`primaryColor` surface, `primaryBorderColor` and `lineColor` ink/ink-muted,
+  `fontFamily` the mono stack), and redefine them for night, rather than using
+  Mermaid's built-in themes.
+- No drop shadows, gradients or rounded nodes.
+
+## Other tools
 
 For tools that can't read CSS (matplotlib, pptx), take hex values from
 `tokens.json`: `light` for paper, `dark` for night.
