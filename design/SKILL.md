@@ -5,8 +5,9 @@ description: TJ's design system, Barrio, for anything visual — charts, graphs,
 
 # Barrio
 
-A terminal-first system: monospace everywhere, square corners, 1px ink rules,
-bracketed labels, salsa/indigo colours on paper (light) and night (dark).
+A terminal-first system with soft edges: monospace everywhere, bracketed
+labels and a `$` prompt, inside rounded cards with warm borders and light
+shadows. Salsa/indigo colours on paper (light) and night (dark).
 
 The source of truth is the Barrio design-system Artifact in TJ's Claude account
 (https://claude.ai/artifact/3J59v7gydXhboDPbakDWKS), which also has live
@@ -18,8 +19,13 @@ component previews. This folder is a copy of it:
 - `tokens.css`: CSS variables generated from `tokens.json`
   (`node tokens-css.mjs`), with dark mode as a redefinition of the same names.
 
-If the Artifact has changed, pull its `project/tokens.json` and
-`project/README.md` into this folder, regenerate `tokens.css`, and commit.
+The Diagrams section below copies the Artifact's Diagram component
+(`project/components/Diagram/README.md`); its live preview is the example to
+match.
+
+If the Artifact has changed, pull its `project/tokens.json`,
+`project/README.md` and the Diagram component's README into this folder and
+this file, regenerate `tokens.css`, and commit.
 
 ## Pages and artifacts
 
@@ -32,8 +38,20 @@ The rules people notice when they're missing:
 - Every word in a mono face: `--font-display` (Martian Mono) for headings and
   big numbers, `--font-mono` (JetBrains Mono) for everything else. Tabular
   figures for numbers; ligatures off in code.
-- Square: `--radius-0` everywhere. Panes are separated by 1px `--ink` rules,
-  not shadows; `--shadow-pop` is only for floating layers.
+- Soft corners: `--radius-sm` (4px) for badges, chips, inputs and bar tops;
+  `--radius-md` (6px) for buttons, list rows, tooltips and diagram nodes;
+  `--radius-lg` (10px) for cards, panes and dialogs. Nothing is square.
+- Borders are 1px warm `--edge`, never hard `--ink`; `--edge-strong` on hover,
+  selection and dashed groups; `--rule` for hairlines inside a card.
+- Cards: `--surface`, 1px `--edge`, `--radius-lg`, `--shadow-sm`, `--space-4`
+  padding. Hover and selection step up to `--shadow-md`; only floating layers
+  (palette, dialogs, tooltips) get `--shadow-pop`.
+- Tint, then outline: what needs to stand out gets a tinted fill with a
+  `--stroke-node` (1.5px) border in the same hue (`--accent-tint` +
+  `--accent`, `--cilantro-tint` + `--cilantro`). Dashed means outside or
+  optional.
+- The selected list row is a `--radius-md` box with `--accent-tint` fill and an
+  `--accent` border; the hovered row gets `--wash`.
 - Section labels: 11px uppercase, 0.14em tracking, `--salsa` brackets and a
   muted count, e.g. `[ CHANGES ] 8`.
 - Each colour has one job. Green (`--cilantro` text, `--cilantro-bright` fills;
@@ -60,8 +78,10 @@ The rules people notice when they're missing:
 - Gridlines `--chart-grid`, baseline `--ink-faint`, axis text `--chart-axis`
   at 11px, values and legend text `--ink`. Series colour goes on marks, never
   on text.
-- Bars start at zero with 2px `--radius-1` tops and a 2px gap; label only the
-  value that matters (the latest or the peak). Lines are 2px.
+- Bars start at zero with `--radius-sm` (4px) tops and a 2px gap; label only
+  the value that matters (the latest or the peak). Lines are 2px.
+- Chart cards are standard cards (`--radius-lg`, `--edge`, `--shadow-sm`).
+  Tooltips: `--surface`, `--radius-md`, `--edge`, `--shadow-pop`, 12px text.
 - Titles in `--font-display`, the unit in a subtitle. A single big number is a
   stat tile, not a chart.
 - One y-axis per chart; two series get a legend.
@@ -71,21 +91,42 @@ The rules people notice when they're missing:
 `artifact-diagramming` decides what to draw and how to lay it out; Barrio
 decides how it looks.
 
-- Nodes: square boxes (`--radius-0`), `--surface` fill, 1px `--ink` border.
-  Group frames and swimlanes: `--wash` fill with a 1px `--rule` border and a
-  bracketed `label` title, e.g. `[ WORKER ]`.
-- Text: `--font-mono`, `--ink` for node names, `--ink-muted` for notes and
-  edge labels. Edge labels sit on a `--bg` knockout so lines don't cross text.
-- Edges: 1px `--ink-muted` with small solid arrowheads; dashed for async or
-  optional paths. The path being explained gets 2px `--accent`.
-- Colour only for meaning, using the UI jobs: `--cilantro` live or healthy,
-  `--salsa` needs attention, `--chile` failure, `--ochre` warning. Everything
-  else stays ink on surface.
-- Mermaid: set `theme: 'base'` and map `themeVariables` to the tokens
-  (`primaryColor` surface, `primaryBorderColor` and `lineColor` ink/ink-muted,
-  `fontFamily` the mono stack), and redefine them for night, rather than using
-  Mermaid's built-in themes.
-- No drop shadows, gradients or rounded nodes.
+Architecture and sequence diagrams: soft rounded nodes, mono labels, three
+kinds of arrow, and a legend underneath. Draw them as SVG on the tokens; the
+Diagram preview in the Artifact is the reference.
+
+- **Nodes** are `--radius-md` boxes, about 60px tall: a 13px semibold name over
+  an 11px `--ink-muted` detail line (fields, methods, paths). Nothing else goes
+  in a box.
+  - Plain (existing code): `--surface` fill, 1px `--edge`, a faint drop shadow.
+  - New or changed (the subject): `--accent-tint` fill, `--stroke-node`
+    `--accent` border, detail line in `--accent`.
+  - Data (tables, caches, stores): `--cilantro-tint` fill, `--stroke-node`
+    `--cilantro` border.
+  - Outside the app (another package, service or vendor): `--surface` fill,
+    `--stroke-node` dashed `--accent`, name in `--accent`.
+- **Groups** are dashed `--edge-strong` boxes at `--radius-lg`, no fill, with a
+  small `--ink-muted` label above the top-left corner ("Unchanged for a new
+  driver").
+- **Arrows** are 1.5px with small filled heads: solid `--ink` = calls, dashed
+  `--ink-muted` = returns, solid `--cilantro` = reads or writes the database.
+  Route at right angles. Labels sit beside the line in 11px mono, `--ink`,
+  except `--cilantro` on the green arrows. A constraint is written on its
+  edge verbatim (`ON DELETE SET NULL`).
+- Notes that aren't nodes (`defined in code, no rows`) are 11–12px
+  `--ink-muted` text near the node, never boxed.
+- **Legend**: every diagram ends with one, under a 1px dashed `--rule`, naming
+  each arrow and node style it uses with a small swatch of the real thing.
+- **Sequence diagrams**: participants are nodes across the top, outside
+  systems last; lifelines are dashed `--rule`; steps are numbered in `--accent`
+  600 at the start of the call; alternative branches sit in dashed
+  `--edge-strong` boxes split by a dashed `--rule`, each part labelled with its
+  condition ("tools_schema_cache set" / "no cache").
+- Mermaid can't draw all of this. If you must use it, set `theme: 'base'`,
+  map `themeVariables` to the tokens (`fontFamily` the mono stack), add a
+  `classDef` per node kind (`fill`, `stroke`, `stroke-width`,
+  `stroke-dasharray`, `rx:6,ry:6`), and redefine the variables for night.
+- No gradients, and no colour without a legend entry.
 
 ## Other tools
 

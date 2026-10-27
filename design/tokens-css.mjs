@@ -23,7 +23,7 @@ export function themes(tokens) {
 
 function css(tokens) {
   const { light, dark } = themes(tokens)
-  const shadow = tokens.shadow.tokens.find((t) => t.name === 'shadow-pop').value
+  const shadows = (theme) => Object.fromEntries(tokens.shadow.tokens.map((t) => [t.name, t.value[theme]]))
   const fixed = {
     'font-display': tokens.type.families.display,
     'font-mono': tokens.type.families.mono,
@@ -35,11 +35,11 @@ function css(tokens) {
     Object.entries(vars)
       .map(([k, v]) => `  --${k}: ${v};`)
       .join('\n')
-  const darkVars = block({ ...dark, 'shadow-pop': shadow.dark }).replace(/^/gm, '  ')
+  const darkVars = block({ ...dark, ...shadows('dark') }).replace(/^/gm, '  ')
   return `/* Generated from tokens.json by tokens-css.mjs. Edit tokens.json, not this file. */
 :root {
   color-scheme: light dark;
-${block({ ...fixed, ...light, 'shadow-pop': shadow.light })}
+${block({ ...fixed, ...light, ...shadows('light') })}
 }
 
 @media (prefers-color-scheme: dark) {
@@ -49,7 +49,7 @@ ${darkVars}
 }
 
 :root[data-theme='dark'] {
-${block({ ...dark, 'shadow-pop': shadow.dark })}
+${block({ ...dark, ...shadows('dark') })}
 }
 `
 }

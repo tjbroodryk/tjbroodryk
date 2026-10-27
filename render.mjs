@@ -18,6 +18,9 @@ const BAR_GAP = 2
 // Barrio (design/tokens.json), paper and night.
 const TOKENS = await loadTokens()
 const { light: LIGHT, dark: DARK } = themes(TOKENS)
+const radius = (name) => parseFloat(TOKENS.radius.tokens.find((t) => t.name === name).value)
+const PANE_R = radius('radius-lg')
+const BAR_R = radius('radius-sm')
 
 // Segment colours are token names, emitted as classes so the SVG follows the viewer's theme.
 const C = {
@@ -37,9 +40,10 @@ const STYLE = `
     svg { ${vars(LIGHT)} }
     @media (prefers-color-scheme: dark) { svg { ${vars(DARK)} } }
     ${Object.keys(LIGHT).map((k) => `.${k} { fill: var(--${k}) }`).join('\n    ')}
-    .window { fill: var(--bg); stroke: var(--ink) }
+    .window { fill: var(--bg) }
+    .window-edge { fill: none; stroke: var(--edge) }
     .bar { fill: var(--wash) }
-    .edge { stroke: var(--ink) }
+    .edge { stroke: var(--edge) }
     .label { font-size: 11px; font-weight: 500; letter-spacing: 0.14em }
     .group, .prompt { font-weight: 700 }
     .tick { font-size: 11px }
@@ -197,9 +201,9 @@ function axisMax(max) {
   return Math.ceil(max / unit) * unit
 }
 
-// A bar from the baseline with 2px-rounded top corners (Barrio's radius-1).
+// A bar from the baseline with rounded top corners (Barrio's radius-sm).
 function barPath(x, w, top, bottom) {
-  const r = Math.min(2, w / 2, bottom - top)
+  const r = Math.min(BAR_R, w / 2, bottom - top)
   const f = (n) => n.toFixed(1)
   return `M${f(x)} ${f(bottom)}V${f(top + r)}Q${f(x)} ${f(top)} ${f(x + r)} ${f(top)}H${f(x + w - r)}Q${f(x + w)} ${f(top)} ${f(x + w)} ${f(top + r)}V${f(bottom)}Z`
 }
@@ -261,12 +265,15 @@ function svg(config, groups, table, days) {
       return `<text x="${PAD_X}" y="${BAR_H + 36 + i * LINE_H}">${spans}</text>`
     })
     .join('\n  ')
-  // Square pane, wash header with a bracketed label and a muted count: [ ~/PROJECTS ] 10.
+  // A rounded card with a wash header clipped to its top corners, holding a
+  // bracketed label and a muted count: [ ~/PROJECTS ] 10.
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" font-family="${TOKENS.type.families.mono.replace(/"/g, "'")}" font-size="${FONT}" xml:space="preserve">
   <style>${STYLE}
   </style>
-  <rect class="window" x="0.5" y="0.5" width="${width - 1}" height="${height - 1}"/>
-  <rect class="bar" x="1" y="1" width="${width - 2}" height="${BAR_H - 1}"/>
+  <clipPath id="pane"><rect x="0.5" y="0.5" width="${width - 1}" height="${height - 1}" rx="${PANE_R}"/></clipPath>
+  <rect class="window" x="0.5" y="0.5" width="${width - 1}" height="${height - 1}" rx="${PANE_R}"/>
+  <rect class="bar" x="0" y="0" width="${width}" height="${BAR_H}" clip-path="url(#pane)"/>
+  <rect class="window-edge" x="0.5" y="0.5" width="${width - 1}" height="${height - 1}" rx="${PANE_R}"/>
   <line class="edge" x1="0" x2="${width}" y1="${BAR_H + 0.5}" y2="${BAR_H + 0.5}"/>
   <text x="${PAD_X}" y="${BAR_H / 2 + 4}"><tspan class="${C.bracket} label">[ </tspan><tspan class="ink label">${esc(config.title.toUpperCase())}</tspan><tspan class="${C.bracket} label"> ]</tspan><tspan class="${C.dim} label">${esc(` ${repoCount}`)}</tspan></text>
   ${text}
