@@ -274,6 +274,12 @@ function svg(config, groups, table, days) {
 `
 }
 
+// Without a token the private repos 404, and a partial render would overwrite the good SVG.
+if (!process.env.GITHUB_TOKEN) {
+  console.error('GITHUB_TOKEN is empty. In CI, set the PROFILE_TOKEN secret to a token that can read every repo in repos.json.')
+  process.exit(1)
+}
+
 const config = JSON.parse(await readFile(new URL('./repos.json', import.meta.url), 'utf8'))
 const github = new GitHub(process.env.GITHUB_TOKEN)
 const repos = config.groups.flatMap((g) => g.repos.map((r) => r.repo))
