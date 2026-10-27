@@ -12,7 +12,8 @@ const BAR_H = 44
 const CHART_DAYS = 90
 const CHART_H = 96
 const AXIS_W = 40
-const TREND_DAYS = 7
+// A working week, since the chart skips weekends.
+const TREND_DAYS = 5
 
 // Colour tokens from a CSS block, e.g. { ink: '#16181d' }.
 function colours(css, selector) {
@@ -58,57 +59,47 @@ class GitHub {
     this.fetch = fetchFn
   }
 
-  async get(path, init = {}) {
+  async get(path) {
     const res = await this.fetch(`https://api.github.com/${path}`, {
-      ...init,
       headers: {
         Accept: 'application/vnd.github+json',
         ...(this.token ? { Authorization: `Bearer ${this.token}` } : {}),
       },
     })
     if (!res.ok) {
-      throw new Error(`${init.method ?? 'GET'} ${path}: ${res.status} ${await res.text()}`)
+      throw new Error(`GET ${path}: ${res.status} ${await res.text()}`)
     }
     return res
   }
 
-  async graphql(query, variables) {
-    const res = await this.get('graphql', { method: 'POST', body: JSON.stringify({ query, variables }) })
-    const { data, errors } = await res.json()
-    if (errors) {
-      throw new Error(`graphql: ${JSON.stringify(errors)}`)
-    }
-    return data
-  }
-
-  // Commits per UTC day for the last `days` days, oldest first, as [date, count] pairs.
-  // A repo has at most one contribution node per day, so 100 nodes covers a 90-day window.
-  async commitsPerDay(user, days) {
-    const to = new Date()
-    const from = new Date(to.getTime() - days * 86_400_000)
-    const data = await this.graphql(
-      `query($user: String!, $from: DateTime!, $to: DateTime!) {
-        user(login: $user) {
-          contributionsCollection(from: $from, to: $to) {
-            commitContributionsByRepository(maxRepositories: 100) {
-              contributions(first: 100) { nodes { occurredAt commitCount } }
-            }
+  // The user's commits per UTC weekday across `repos` for the last `days` calendar
+  // days, oldest first, as [date, count] pairs. Default branches only.
+  async commitsPerWeekday(repos, user, days) {
+    const from = new Date(Date.now() - days * 86_400_000)
+    const counts = new Map()
+    await Promise.all(
+      repos.map(async (repo) => {
+        for (let page = 1; ; page++) {
+          const res = await this.get(
+            `repos/${repo}/commits?author=${user}&since=${from.toISOString()}&per_page=100&page=${page}`,
+          )
+          const commits = await res.json()
+          for (const { commit } of commits) {
+            const day = commit.author.date.slice(0, 10)
+            counts.set(day, (counts.get(day) ?? 0) + 1)
+          }
+          if (commits.length < 100) {
+            break
           }
         }
-      }`,
-      { user, from: from.toISOString(), to: to.toISOString() },
+      }),
     )
-    const counts = new Map()
-    for (const repo of data.user.contributionsCollection.commitContributionsByRepository) {
-      for (const { occurredAt, commitCount } of repo.contributions.nodes) {
-        const day = occurredAt.slice(0, 10)
-        counts.set(day, (counts.get(day) ?? 0) + commitCount)
-      }
-    }
-    return Array.from({ length: days }, (_, i) => {
-      const day = new Date(from.getTime() + (i + 1) * 86_400_000).toISOString().slice(0, 10)
-      return [day, counts.get(day) ?? 0]
-    })
+    return Array.from({ length: days }, (_, i) => new Date(from.getTime() + (i + 1) * 86_400_000))
+      .filter((date) => date.getUTCDay() !== 0 && date.getUTCDay() !== 6)
+      .map((date) => {
+        const day = date.toISOString().slice(0, 10)
+        return [day, counts.get(day) ?? 0]
+      })
   }
 
   // Counts commits by asking for one per page and reading the last page number.
@@ -207,7 +198,7 @@ const shortDate = (day) =>
 
 // Rounds the y-axis top up to a value whose half is a whole, readable number.
 function axisMax(max) {
-  const unit = max <= 10 ? 2 : max <= 50 ? 10 : 50
+  const unit = max <= 10 ? 2 : max <= 50 ? 10 : max <= 200 ? 20 : 100
   return Math.ceil(max / unit) * unit
 }
 
@@ -244,7 +235,7 @@ function chart(days, x, top, width) {
   const trend = `<polyline class="trend" points="${points}"/>`
 
   const labelY = bottom + 20
-  const summary = `${total} commits · peak ${max}/day · line: ${TREND_DAYS}-day avg`
+  const summary = `${total} commits · peak ${max}/day · line: ${TREND_DAYS}-weekday avg`
   const labels = [
     `<text x="${plotX}" y="${labelY}" class="${C.dim}">${esc(shortDate(days[0][0]))}</text>`,
     `<text x="${plotX + (width - AXIS_W) / 2}" y="${labelY}" text-anchor="middle" class="${C.dim}">${esc(summary)}</text>`,
@@ -261,7 +252,7 @@ function svg(config, groups, table, days) {
     [],
     ...table,
     [],
-    [['$ ', C.prompt], [`probe log --commits --per day --since ${days.length}d`, C.text]],
+    [['$ ', C.prompt], [`probe log --commits --per weekday --since ${CHART_DAYS}d`, C.text]],
   ]
   const tableW = table[0][0][0].length * CHAR_W
   const width = Math.ceil(PAD_X * 2 + tableW)
@@ -293,7 +284,7 @@ const github = new GitHub(process.env.GITHUB_TOKEN)
 const repos = config.groups.flatMap((g) => g.repos.map((r) => r.repo))
 const [stats, days] = await Promise.all([
   Promise.all(repos.map(async (r) => [r, await github.stats(r, config.user)])).then((s) => new Map(s)),
-  github.commitsPerDay(config.user, CHART_DAYS),
+  github.commitsPerWeekday(repos, config.user, CHART_DAYS),
 ])
 const groups = visibleGroups(config, stats)
 await writeFile(
