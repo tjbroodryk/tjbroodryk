@@ -12,8 +12,6 @@ const BAR_H = 44
 const CHART_DAYS = 90
 const CHART_H = 96
 const AXIS_W = 40
-// A working week, since the chart skips weekends.
-const TREND_DAYS = 5
 
 // Colour tokens from a CSS block, e.g. { ink: '#16181d' }.
 function colours(css, selector) {
@@ -50,8 +48,7 @@ const STYLE = `
     .bar { fill: var(--surface-sunk) }
     .group { font-weight: 600 }
     .tick { font-size: 12px }
-    .grid { stroke: var(--line); stroke-dasharray: 2 3 }
-    .trend { fill: none; stroke: var(--ink-muted); stroke-width: 1.5; stroke-linejoin: round }`
+    .grid { stroke: var(--line); stroke-dasharray: 2 3 }`
 
 class GitHub {
   constructor(token, fetchFn = fetch) {
@@ -202,14 +199,7 @@ function axisMax(max) {
   return Math.ceil(max / unit) * unit
 }
 
-// Trailing average over `window` days; early days average what they have.
-const rolling = (values, window) =>
-  values.map((_, i) => {
-    const slice = values.slice(Math.max(0, i - window + 1), i + 1)
-    return slice.reduce((a, b) => a + b, 0) / slice.length
-  })
-
-// One bar per day with a y-axis and a 7-day average line, spanning `width` from `x`.
+// One bar per day with a y-axis, spanning `width` from `x`.
 function chart(days, x, top, width) {
   const counts = days.map(([, n]) => n)
   const max = Math.max(1, ...counts)
@@ -229,19 +219,14 @@ function chart(days, x, top, width) {
     const cls = n ? 'accent' : 'line'
     return `<rect class="${cls}" x="${(plotX + i * slot + 1).toFixed(1)}" y="${(bottom - h).toFixed(1)}" width="${(slot - 2).toFixed(1)}" height="${h.toFixed(1)}" rx="1"/>`
   })
-  const points = rolling(counts, TREND_DAYS)
-    .map((avg, i) => `${(plotX + (i + 0.5) * slot).toFixed(1)},${y(avg).toFixed(1)}`)
-    .join(' ')
-  const trend = `<polyline class="trend" points="${points}"/>`
-
   const labelY = bottom + 20
-  const summary = `${total} commits · peak ${max}/day · line: ${TREND_DAYS}-weekday avg`
+  const summary = `${total} commits · peak ${max}/day`
   const labels = [
     `<text x="${plotX}" y="${labelY}" class="${C.dim}">${esc(shortDate(days[0][0]))}</text>`,
     `<text x="${plotX + (width - AXIS_W) / 2}" y="${labelY}" text-anchor="middle" class="${C.dim}">${esc(summary)}</text>`,
     `<text x="${x + width}" y="${labelY}" text-anchor="end" class="${C.dim}">today</text>`,
   ]
-  return { markup: [...axis, ...bars, trend, ...labels].join('\n  '), bottom: labelY }
+  return { markup: [...axis, ...bars, ...labels].join('\n  '), bottom: labelY }
 }
 
 function svg(config, groups, table, days) {
