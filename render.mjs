@@ -1,6 +1,7 @@
 // Renders terminal.svg from repos.json using live GitHub stats.
 // Usage: GITHUB_TOKEN=... node render.mjs
 import { readFile, writeFile } from 'node:fs/promises'
+import { loadTokens, themes } from './design/tokens-css.mjs'
 
 const FRESH_DAYS = 7
 const STALE_DAYS = 365
@@ -8,35 +9,26 @@ const FONT = 14
 const CHAR_W = FONT * 0.6
 const LINE_H = 24
 const PAD_X = 32
-const BAR_H = 44
+const BAR_H = 40
 const CHART_DAYS = 90
 const CHART_H = 96
 const AXIS_W = 40
+const BAR_GAP = 2
 
-// Colour tokens from a CSS block, e.g. { ink: '#16181d' }.
-function colours(css, selector) {
-  const start = css.indexOf(selector)
-  if (start < 0) {
-    throw new Error(`design/tokens.css: no ${selector} block`)
-  }
-  const block = css.slice(start, css.indexOf('}', start))
-  return Object.fromEntries([...block.matchAll(/--([\w-]+):\s*(#[0-9a-f]+);/gi)].map((m) => [m[1], m[2]]))
-}
-
-const TOKENS = await readFile(new URL('./design/tokens.css', import.meta.url), 'utf8')
-const LIGHT = colours(TOKENS, ':root {')
-const DARK = { ...LIGHT, ...colours(TOKENS, ":root[data-theme='dark'] {") }
+// Barrio (design/tokens.json), paper and night.
+const TOKENS = await loadTokens()
+const { light: LIGHT, dark: DARK } = themes(TOKENS)
 
 // Segment colours are token names, emitted as classes so the SVG follows the viewer's theme.
 const C = {
   text: 'ink',
-  dim: 'ink-faint',
+  dim: 'ink-muted',
   rule: 'ink-faint',
   name: 'accent',
-  group: 'ink-muted',
+  group: 'ink',
   role: 'ink-muted',
-  prompt: 'ok',
-  fresh: 'ok',
+  prompt: 'accent',
+  fresh: 'cilantro',
 }
 
 const vars = (tokens) => Object.entries(tokens).map(([k, v]) => `--${k}:${v};`).join('')
@@ -44,11 +36,16 @@ const STYLE = `
     svg { ${vars(LIGHT)} }
     @media (prefers-color-scheme: dark) { svg { ${vars(DARK)} } }
     ${Object.keys(LIGHT).map((k) => `.${k} { fill: var(--${k}) }`).join('\n    ')}
-    .window { fill: var(--ground); stroke: var(--line) }
-    .bar { fill: var(--surface-sunk) }
+    .window { fill: var(--bg); stroke: var(--ink) }
+    .bar { fill: var(--wash) }
+    .edge { stroke: var(--ink) }
+    .label { font-size: 11px; font-weight: 500; letter-spacing: 0.14em }
     .group { font-weight: 600 }
-    .tick { font-size: 12px }
-    .grid { stroke: var(--line); stroke-dasharray: 2 3 }`
+    .tick { font-size: 11px }
+    .value { font-size: 11px; font-weight: 600 }
+    .grid { stroke: var(--chart-grid) }
+    .baseline { stroke: var(--ink-faint) }
+    .mark { fill: var(--cat-1) }`
 
 class GitHub {
   constructor(token, fetchFn = fetch) {
@@ -199,7 +196,14 @@ function axisMax(max) {
   return Math.ceil(max / unit) * unit
 }
 
-// One bar per day with a y-axis, spanning `width` from `x`.
+// A bar from the baseline with 2px-rounded top corners (Barrio's radius-1).
+function barPath(x, w, top, bottom) {
+  const r = Math.min(2, w / 2, bottom - top)
+  const f = (n) => n.toFixed(1)
+  return `M${f(x)} ${f(bottom)}V${f(top + r)}Q${f(x)} ${f(top)} ${f(x + r)} ${f(top)}H${f(x + w - r)}Q${f(x + w)} ${f(top)} ${f(x + w)} ${f(top + r)}V${f(bottom)}Z`
+}
+
+// One bar per day with a y-axis, spanning `width` from `x`. Only the peak gets a value label.
 function chart(days, x, top, width) {
   const counts = days.map(([, n]) => n)
   const max = Math.max(1, ...counts)
@@ -211,13 +215,20 @@ function chart(days, x, top, width) {
   const y = (n) => bottom - (n / yMax) * CHART_H
 
   const axis = [0, yMax / 2, yMax].flatMap((tick) => [
-    `<line class="grid" x1="${plotX}" x2="${x + width}" y1="${y(tick)}" y2="${y(tick)}"/>`,
+    `<line class="${tick ? 'grid' : 'baseline'}" x1="${plotX}" x2="${x + width}" y1="${y(tick)}" y2="${y(tick)}"/>`,
     `<text class="${C.dim} tick" x="${plotX - 8}" y="${y(tick) + 4}" text-anchor="end">${tick}</text>`,
   ])
-  const bars = counts.map((n, i) => {
-    const h = n ? Math.max(2, (n / yMax) * CHART_H) : 1
-    const cls = n ? 'accent' : 'line'
-    return `<rect class="${cls}" x="${(plotX + i * slot + 1).toFixed(1)}" y="${(bottom - h).toFixed(1)}" width="${(slot - 2).toFixed(1)}" height="${h.toFixed(1)}" rx="1"/>`
+  const peak = counts.indexOf(max)
+  const bars = counts.flatMap((n, i) => {
+    if (!n) {
+      return []
+    }
+    const bx = plotX + i * slot + BAR_GAP / 2
+    const marks = [`<path class="mark" d="${barPath(bx, slot - BAR_GAP, y(n), bottom)}"/>`]
+    if (i === peak) {
+      marks.push(`<text class="ink value" x="${(bx + (slot - BAR_GAP) / 2).toFixed(1)}" y="${y(n) - 5}" text-anchor="middle">${n}</text>`)
+    }
+    return marks
   })
   const labelY = bottom + 20
   const summary = `${total} commits · peak ${max}/day`
@@ -249,15 +260,14 @@ function svg(config, groups, table, days) {
       return `<text x="${PAD_X}" y="${BAR_H + 36 + i * LINE_H}">${spans}</text>`
     })
     .join('\n  ')
-  return `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" font-family="ui-monospace, 'SF Mono', 'Cascadia Code', Menlo, 'DejaVu Sans Mono', monospace" font-size="${FONT}" xml:space="preserve">
+  // Square pane, wash header with a bracketed label and a muted count: [ ~/PROJECTS ] 10.
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" font-family="${TOKENS.type.families.mono.replace(/"/g, "'")}" font-size="${FONT}" xml:space="preserve">
   <style>${STYLE}
   </style>
-  <rect class="window" x="0.5" y="0.5" width="${width - 1}" height="${height - 1}" rx="8"/>
-  <path class="bar" d="M1 ${BAR_H}V9a8 8 0 0 1 8-8h${width - 18}a8 8 0 0 1 8 8v${BAR_H - 9}z"/>
-  <circle cx="24" cy="${BAR_H / 2}" r="6" fill="#ff5f57"/>
-  <circle cx="44" cy="${BAR_H / 2}" r="6" fill="#febc2e"/>
-  <circle cx="64" cy="${BAR_H / 2}" r="6" fill="#28c840"/>
-  <text x="${width / 2}" y="${BAR_H / 2 + 5}" text-anchor="middle" class="${C.dim}">${esc(config.title)}</text>
+  <rect class="window" x="0.5" y="0.5" width="${width - 1}" height="${height - 1}"/>
+  <rect class="bar" x="1" y="1" width="${width - 2}" height="${BAR_H - 1}"/>
+  <line class="edge" x1="0" x2="${width}" y1="${BAR_H + 0.5}" y2="${BAR_H + 0.5}"/>
+  <text x="${PAD_X}" y="${BAR_H / 2 + 4}"><tspan class="ink label">${esc(`[ ${config.title.toUpperCase()} ]`)}</tspan><tspan class="${C.dim} label">${esc(` ${repoCount}`)}</tspan></text>
   ${text}
   ${graph.markup}
 </svg>

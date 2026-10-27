@@ -1,58 +1,69 @@
 ---
-name: crucible-design
-description: TJ's design system (Crucible's) for anything visual — charts, graphs, dashboards, Artifacts, HTML pages, SVGs, slides, matplotlib or plotly output. Load before writing any of them, alongside dataviz or artifact-design; its tokens replace their palettes, fonts and radii.
+name: barrio-design
+description: TJ's design system, Barrio, for anything visual — charts, graphs, dashboards, Artifacts, HTML pages, SVGs, slides, matplotlib or plotly output. Load before writing any of them, alongside dataviz or artifact-design; Barrio's tokens, type and chart rules replace their palettes, fonts and radii.
 ---
 
-# Crucible design system
+# Barrio
 
-`tokens.css` next to this file is copied from Crucible
-(`coterahq/crucible`, `packages/ui/src/styles/tokens.css`). `charts.css` adds
-series colours Crucible doesn't have. Both live in `tjbroodryk/tjbroodryk`
-under `design/`; change them there, not in a page.
+A terminal-first system: monospace everywhere, square corners, 1px ink rules,
+bracketed labels, salsa/indigo colours on paper (light) and night (dark).
+
+The source of truth is the Barrio design-system Artifact in TJ's Claude account
+(https://claude.ai/artifact/3J59v7gydXhboDPbakDWKS), which also has live
+component previews. This folder is a copy of it:
+
+- `README.md`: Barrio's own guide: principles, colour jobs, type, layout,
+  chart rules, voice. Read it before designing anything non-trivial.
+- `tokens.json`: every token with its light and dark values and its usage note.
+- `tokens.css`: CSS variables generated from `tokens.json`
+  (`node tokens-css.mjs`), with dark mode as a redefinition of the same names.
+
+If the Artifact has changed, pull its `project/tokens.json` and
+`project/README.md` into this folder, regenerate `tokens.css`, and commit.
 
 ## Pages and artifacts
 
-Paste `tokens.css` at the top of the page's `<style>` and use `var(--…)` for
-every colour, radius and gap. No raw hex in component styles. Dark mode is
-already in the file as a redefinition of the same names; never branch a
-component on theme.
+Paste `tokens.css` into the page's `<style>`, load the fonts
+(`<link>` in `README.md`), and use `var(--…)` for every colour, size and gap.
+No raw hex in component styles, and no per-component theme branches.
 
-- Body: `--ground` background, `--ink` text, `--font` at 14px, line-height 1.5.
-  Numbers, code and IDs in `--mono`.
-- Secondary text `--ink-muted`; hints, timestamps and axis labels `--ink-faint`.
-- Panels: `--surface`, 1px `--line` border, `--radius`. Optional header row with
-  10px 14px padding, weight 600 and a `--line` bottom border; body padding 14px.
-  Wells and code blocks use `--surface-sunk`.
-- Controls: `--radius-sm`, 6px 12px padding, weight 500. Default button is
-  `--surface`/`--ink`/`--line`; the primary one is `--accent` with
-  `--accent-ink` text; destructive is `--danger` with white text.
-- Pills and badges: 999px radius, 1px border and text in the tone colour, a
-  6px dot before the label.
-- Spacing comes from `--gap` (12px) and `--gap-lg` (20px).
-- Flat: borders, not shadows or gradients.
-- Wide content scrolls inside its own panel; the page never scrolls sideways.
+The rules people notice when they're missing:
 
-Colour carries meaning: `--accent` is running, selected or a link; `--ok` is
-success; `--warn` is waiting or needs attention; `--danger` is an error;
-`--ink-faint` is cancelled or disabled.
+- Every word in a mono face: `--font-display` (Martian Mono) for headings and
+  big numbers, `--font-mono` (JetBrains Mono) for everything else. Tabular
+  figures for numbers; ligatures off in code.
+- Square: `--radius-0` everywhere. Panes are separated by 1px `--ink` rules,
+  not shadows; `--shadow-pop` is only for floating layers.
+- Section labels: 11px uppercase, 0.14em tracking, in brackets with a muted
+  count, e.g. `[ CHANGES ] 8`.
+- `--accent` (indigo) is interaction and live state. `--salsa` is for what needs
+  a person, and only as fills or 24px+ type; small red text is `--salsa-deep`.
+- `--ink-faint` is never text. `--pine` is a highlight, never a text colour.
+- Voice is short, literal and lowercase where a terminal would be.
 
 ## Charts
 
-Follow the dataviz skill for chart form, marks and interaction, with these
-colours instead of its palette:
+`README.md` has the full chart rules; the short version:
 
-- One series: `--accent`. Categories: `--series-1` to `--series-5` in order;
-  fold anything past five into "other" in `--ink-faint`.
-- Use `--ok`/`--warn`/`--danger` only when colour encodes good/bad or status,
-  and never in the same chart as series colours.
-- Gridlines, axes and zero or empty marks: `--line`. Tick labels: `--ink-faint`
-  at 12px in `--mono`. Titles: `--ink`, weight 600.
-- Trend or average lines: `--ink-muted`, 1.5px, over the bars or points.
+- One series: `--cat-1`. Categories: `--cat-1` to `--cat-5` in fixed order,
+  never cycled; a sixth folds into "other". Magnitude: `--seq-1` to `--seq-5`.
+  Polarity: the `--div-*` ramp.
+- Never use a status colour (cilantro, chile, ochre, salsa as a state) as a
+  series.
+- Gridlines `--chart-grid`, baseline `--ink-faint`, axis text `--chart-axis`
+  at 11px, values and legend text `--ink`. Series colour goes on marks, never
+  on text.
+- Bars start at zero with 2px `--radius-1` tops and a 2px gap; label only the
+  value that matters (the latest or the peak). Lines are 2px.
+- Titles in `--font-display`, the unit in a subtitle. A single big number is a
+  stat tile, not a chart.
+- One y-axis per chart; two series get a legend.
 
-For tools that can't read CSS (matplotlib, plotly images, pptx), take hex
-values from the light block of `tokens.css` and `charts.css`, or the dark
-blocks if the output only ever shows on a dark background.
+For tools that can't read CSS (matplotlib, pptx), take hex values from
+`tokens.json`: `light` for paper, `dark` for night.
 
-An SVG embedded with `<img>`, such as one in a GitHub README, can still follow
+An SVG shown through `<img>`, such as one in a GitHub README, can still follow
 the viewer's theme: put the variables and a `prefers-color-scheme` block in a
-`<style>` inside the SVG. `render.mjs` in `tjbroodryk/tjbroodryk` does this.
+`<style>` inside the SVG. External fonts don't load there, so it falls back to
+the next face in the mono stack. `render.mjs` in `tjbroodryk/tjbroodryk` does
+this.
