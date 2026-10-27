@@ -1,0 +1,48 @@
+{
+  "user": "tjbroodryk",
+  "title": "tj@dev: ~/projects",
+  "command": "probe run --suite tjbroodryk",
+  "groups": [
+    {
+      "name": "",
+      "repos": [
+        { "repo": "tjbroodryk/ingot", "what": "memory for agents" },
+        { "repo": "coterahq/crucible", "what": "durable agent harness" },
+        { "repo": "coterahq/toon-experiment", "what": "TOON vs JSON for LLMs" },
+        { "repo": "tjbroodryk/forge", "what": "bun monorepo + mem" }
+      ]
+    },
+    {
+      "name": "cotera",
+      "repos": [
+        { "repo": "coterahq/cotera", "what": "TS monorepo" },
+        { "repo": "coterahq/griddle", "what": "React data grid" },
+        { "repo": "coterahq/watchtower", "what": "observable viewmodels" },
+        { "repo": "coterahq/coco-snowflake", "what": "Snowflake native app" },
+        { "repo": "coterahq/modal_apps", "what": "Modal pipelines" }
+      ]
+    },
+    {
+      "name": "omni",
+      "repos": [
+        { "repo": "exploreomni/omni", "what": "Omni monorepo" }
+      ]
+    },
+    {
+      "name": "nestjs",
+      "repos": [
+        { "repo": "tjbroodryk/nestjs-repl", "what": "typed REPL commands" },
+        { "repo": "tjbroodryk/nestjs-typed-events", "what": "typed event emitter" },
+        { "repo": "tjbroodryk/nestjs-rest-contracts", "what": "typed REST contracts" }
+      ]
+    },
+    {
+      "name": "tools",
+      "repos": [
+        { "repo": "tjbroodryk/commitri", "what": "commit files via API" },
+        { "repo": "tjbroodryk/ts-lib-template", "what": "TS lib template" },
+        { "repo": "tjbroodryk/react-syringe", "what": "DI for React" }
+      ]
+    }
+  ]
+}

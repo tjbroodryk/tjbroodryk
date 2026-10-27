@@ -1,0 +1,83 @@
+/*
+ * One palette, defined once, in tokens.
+ *
+ * Every colour in every component resolves to a variable here, so a theme is a
+ * block of overrides rather than a sweep through the components. The dark
+ * block is a redefinition of the same names — never a component-level branch —
+ * which is what keeps "does this work in dark mode" a question about this file
+ * alone.
+ */
+:root {
+  color-scheme: light dark;
+
+  --ink: #16181d;
+  --ink-muted: #5c6270;
+  --ink-faint: #8d94a3;
+
+  --ground: #fbfbfd;
+  --surface: #ffffff;
+  --surface-sunk: #f3f4f7;
+  --line: #e2e5ec;
+
+  --accent: #3b5bdb;
+  --accent-ink: #ffffff;
+  --accent-faint: #eef2ff;
+
+  --ok: #2f9e44;
+  --warn: #e8590c;
+  --danger: #c92a2a;
+
+  --radius: 8px;
+  --radius-sm: 5px;
+  --gap: 12px;
+  --gap-lg: 20px;
+
+  --font: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: ui-monospace, "SF Mono", "Cascadia Code", Menlo, monospace;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --ink: #e7e9ee;
+    --ink-muted: #a4abba;
+    --ink-faint: #6f7787;
+
+    --ground: #101216;
+    --surface: #171a20;
+    --surface-sunk: #1e222a;
+    --line: #2a2f39;
+
+    --accent: #7c95f5;
+    --accent-ink: #0d1017;
+    --accent-faint: #1b2136;
+  }
+}
+
+:root[data-theme='dark'] {
+  --ink: #e7e9ee;
+  --ink-muted: #a4abba;
+  --ink-faint: #6f7787;
+
+  --ground: #101216;
+  --surface: #171a20;
+  --surface-sunk: #1e222a;
+  --line: #2a2f39;
+
+  --accent: #7c95f5;
+  --accent-ink: #0d1017;
+  --accent-faint: #1b2136;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--ground);
+  color: var(--ink);
+  font-family: var(--font);
+  font-size: 14px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}

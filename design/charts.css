@@ -1,0 +1,30 @@
+/*
+ * Series colours for charts. Not part of Crucible, which has no categorical
+ * palette; picked from the same open-color families as its accent and status
+ * tokens. Load after tokens.css.
+ */
+:root {
+  --series-1: #3b5bdb;
+  --series-2: #0c8599;
+  --series-3: #9c36b5;
+  --series-4: #d9480f;
+  --series-5: #5c940d;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --series-1: #7c95f5;
+    --series-2: #3bc9db;
+    --series-3: #da77f2;
+    --series-4: #ff922b;
+    --series-5: #94d82d;
+  }
+}
+
+:root[data-theme='dark'] {
+  --series-1: #7c95f5;
+  --series-2: #3bc9db;
+  --series-3: #da77f2;
+  --series-4: #ff922b;
+  --series-5: #94d82d;
+}
