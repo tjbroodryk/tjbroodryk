@@ -50,7 +50,8 @@ const STYLE = `
     .value { font-size: 11px; font-weight: 600 }
     .grid { stroke: var(--chart-grid) }
     .baseline { stroke: var(--ink-faint) }
-    .mark { fill: var(--cat-1) }`
+    .mark-1 { fill: var(--cat-1) }
+    .mark-2 { fill: var(--cat-2) }`
 
 class GitHub {
   constructor(token, fetchFn = fetch) {
@@ -251,9 +252,11 @@ function barPath(x, w, top, bottom) {
   return `M${f(x)} ${f(bottom)}V${f(top + r)}Q${f(x)} ${f(top)} ${f(x + r)} ${f(top)}H${f(x + w - r)}Q${f(x + w)} ${f(top)} ${f(x + w)} ${f(top + r)}V${f(bottom)}Z`
 }
 
-// One bar per day with a y-axis, spanning `width` from `x`. Only the peak gets a value label.
-function chart(days, unit, x, top, width) {
-  const counts = days.map(([, n]) => n)
+// One bar per day with a y-axis, spanning `width` from `x`. Each day is
+// [date, [count per series]], stacked bottom-up in `series` order; more than one
+// series gets a legend. Only the peak gets a value label.
+function chart(days, unit, series, x, top, width) {
+  const counts = days.map(([, parts]) => parts.reduce((a, b) => a + b, 0))
   const max = Math.max(1, ...counts)
   const yMax = axisMax(max)
   const total = counts.reduce((a, b) => a + b, 0)
@@ -272,9 +275,22 @@ function chart(days, unit, x, top, width) {
       return []
     }
     const bx = plotX + i * slot + BAR_GAP / 2
-    const marks = [`<path class="mark" d="${barPath(bx, slot - BAR_GAP, y(n), bottom)}"/>`]
+    const bw = slot - BAR_GAP
+    const parts = days[i][1]
+    const last = parts.findLastIndex((p) => p > 0)
+    let base = 0
+    const marks = parts.flatMap((p, s) => {
+      if (!p) {
+        return []
+      }
+      const [from, to] = [y(base), y(base + p)]
+      base += p
+      // Only the top segment gets the rounded corners.
+      const d = s === last ? barPath(bx, bw, to, from) : `M${bx.toFixed(1)} ${from.toFixed(1)}V${to.toFixed(1)}H${(bx + bw).toFixed(1)}V${from.toFixed(1)}Z`
+      return [`<path class="mark-${s + 1}" d="${d}"/>`]
+    })
     if (i === peak) {
-      marks.push(`<text class="ink value" x="${(bx + (slot - BAR_GAP) / 2).toFixed(1)}" y="${y(n) - 5}" text-anchor="middle">${compact(n)}</text>`)
+      marks.push(`<text class="ink value" x="${(bx + bw / 2).toFixed(1)}" y="${y(n) - 5}" text-anchor="middle">${compact(n)}</text>`)
     }
     return marks
   })
@@ -285,7 +301,20 @@ function chart(days, unit, x, top, width) {
     `<text x="${plotX + (width - AXIS_W) / 2}" y="${labelY}" text-anchor="middle" class="${C.dim}">${esc(summary)}</text>`,
     `<text x="${x + width}" y="${labelY}" text-anchor="end" class="${C.dim}">today</text>`,
   ]
-  return { markup: [...axis, ...bars, ...labels].join('\n  '), bottom: labelY }
+  if (series.length < 2) {
+    return { markup: [...axis, ...bars, ...labels].join('\n  '), bottom: labelY }
+  }
+  const legendY = labelY + 24
+  let legendX = plotX
+  const legend = series.flatMap((name, s) => {
+    const item = [
+      `<rect class="mark-${s + 1}" x="${legendX}" y="${legendY - 9}" width="10" height="10" rx="2"/>`,
+      `<text class="ink tick" x="${legendX + 16}" y="${legendY}">${esc(name)}</text>`,
+    ]
+    legendX += 16 + name.length * 11 * 0.6 + 24
+    return item
+  })
+  return { markup: [...axis, ...bars, ...labels, ...legend].join('\n  '), bottom: legendY }
 }
 
 function svg(config, groups, table, days, tokenDays) {
@@ -302,12 +331,12 @@ function svg(config, groups, table, days, tokenDays) {
   const width = Math.ceil(PAD_X * 2 + tableW)
   const textLine = (segs, y) =>
     `<text x="${PAD_X}" y="${y}">${segs.map(([t, c]) => `<tspan class="${c}">${esc(t)}</tspan>`).join('')}</text>`
-  const graph = chart(days, 'commits', PAD_X, BAR_H + 36 + (lines.length - 1) * LINE_H + 28, tableW)
+  const graph = chart(days.map(([day, n]) => [day, [n]]), 'commits', ['commits'], PAD_X, BAR_H + 36 + (lines.length - 1) * LINE_H + 28, tableW)
   const graphs = [graph.markup]
   let bottom = graph.bottom
   if (tokenDays.length) {
     const commandY = bottom + 48
-    const tokens = chart(tokenDays, 'tokens', PAD_X, commandY + 28, tableW)
+    const tokens = chart(tokenDays, 'tokens', ['cache reads', 'cache misses'], PAD_X, commandY + 28, tableW)
     graphs.push(
       textLine([['$ ', C.prompt], [`probe log --tokens --per day --since ${CHART_DAYS}d`, C.text]], commandY),
       tokens.markup,
@@ -334,7 +363,8 @@ function svg(config, groups, table, days, tokenDays) {
 }
 
 // Every machine's usage/<host>.json (written by usage.mjs) summed per UTC day,
-// oldest first, as [date, tokens] pairs. Empty when no machine has synced yet.
+// oldest first, as [date, [cache reads, cache misses]]. Misses are uncached input
+// plus cache writes; output tokens are left out. Empty when no machine has synced yet.
 async function tokensPerDay(days) {
   const dir = new URL('./usage/', import.meta.url)
   const files = await readdir(dir).catch(() => [])
@@ -342,7 +372,8 @@ async function tokensPerDay(days) {
   for (const file of files.filter((f) => f.endsWith('.json'))) {
     const machine = JSON.parse(await readFile(new URL(file, dir), 'utf8'))
     for (const [day, d] of Object.entries(machine)) {
-      totals.set(day, (totals.get(day) ?? 0) + d.input + d.cacheWrite + d.cacheRead + d.output)
+      const [reads, misses] = totals.get(day) ?? [0, 0]
+      totals.set(day, [reads + d.cacheRead, misses + d.input + d.cacheWrite])
     }
   }
   if (!totals.size) {
@@ -350,7 +381,7 @@ async function tokensPerDay(days) {
   }
   return Array.from({ length: days }, (_, i) => {
     const day = new Date(Date.now() - (days - 1 - i) * 86_400_000).toISOString().slice(0, 10)
-    return [day, totals.get(day) ?? 0]
+    return [day, totals.get(day) ?? [0, 0]]
   })
 }
 
