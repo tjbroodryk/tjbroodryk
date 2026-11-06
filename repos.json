@@ -6,6 +6,7 @@
     {
       "name": "",
       "repos": [
+        { "repo": "tjbroodryk/herald", "what": "LLM prompt editor" },
         { "repo": "tjbroodryk/ingot", "what": "memory for agents" },
         { "repo": "coterahq/crucible", "what": "durable agent harness" },
         { "repo": "coterahq/toon-experiment", "what": "TOON vs JSON for LLMs" },
