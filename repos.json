@@ -17,6 +17,7 @@
       "name": "cotera",
       "repos": [
         { "repo": "coterahq/cotera", "what": "TS monorepo" },
+        { "repo": "coterahq/website", "what": "cotera.co site" },
         { "repo": "coterahq/griddle", "what": "React data grid" },
         { "repo": "coterahq/watchtower", "what": "observable viewmodels" },
         { "repo": "coterahq/coco-snowflake", "what": "Snowflake native app" },

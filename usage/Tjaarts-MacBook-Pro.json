@@ -1,0 +1,170 @@
+{
+  "2026-10-02": {
+    "input": 254,
+    "cacheWrite": 413315,
+    "cacheRead": 13254155,
+    "output": 68844
+  },
+  "2026-10-06": {
+    "input": 1222,
+    "cacheWrite": 470184,
+    "cacheRead": 16242267,
+    "output": 319
+  },
+  "2026-10-07": {
+    "input": 4352,
+    "cacheWrite": 3256348,
+    "cacheRead": 160381805,
+    "output": 407974
+  },
+  "2026-10-08": {
+    "input": 6284,
+    "cacheWrite": 7715466,
+    "cacheRead": 1018173823,
+    "output": 1180406
+  },
+  "2026-10-09": {
+    "input": 41276,
+    "cacheWrite": 4140009,
+    "cacheRead": 458195585,
+    "output": 729130
+  },
+  "2026-10-11": {
+    "input": 362,
+    "cacheWrite": 1814403,
+    "cacheRead": 107064256,
+    "output": 259849
+  },
+  "2026-10-12": {
+    "input": 5476,
+    "cacheWrite": 7952957,
+    "cacheRead": 1017189721,
+    "output": 2137575
+  },
+  "2026-10-13": {
+    "input": 3706,
+    "cacheWrite": 3764017,
+    "cacheRead": 813862810,
+    "output": 1649323
+  },
+  "2026-10-14": {
+    "input": 3630,
+    "cacheWrite": 6277880,
+    "cacheRead": 614818420,
+    "output": 1374742
+  },
+  "2026-10-15": {
+    "input": 5062,
+    "cacheWrite": 6011891,
+    "cacheRead": 796402757,
+    "output": 1384671
+  },
+  "2026-10-16": {
+    "input": 13156,
+    "cacheWrite": 6976785,
+    "cacheRead": 606004690,
+    "output": 1111597
+  },
+  "2026-10-18": {
+    "input": 90,
+    "cacheWrite": 2638860,
+    "cacheRead": 18619006,
+    "output": 18821
+  },
+  "2026-10-19": {
+    "input": 2910,
+    "cacheWrite": 4199089,
+    "cacheRead": 427642292,
+    "output": 1069245
+  },
+  "2026-10-20": {
+    "input": 15026,
+    "cacheWrite": 4707090,
+    "cacheRead": 394401047,
+    "output": 1015785
+  },
+  "2026-10-21": {
+    "input": 17998,
+    "cacheWrite": 2642484,
+    "cacheRead": 258664603,
+    "output": 682817
+  },
+  "2026-10-22": {
+    "input": 5850,
+    "cacheWrite": 4698944,
+    "cacheRead": 528707751,
+    "output": 1296465
+  },
+  "2026-10-23": {
+    "input": 558,
+    "cacheWrite": 838887,
+    "cacheRead": 24873097,
+    "output": 146945
+  },
+  "2026-10-26": {
+    "input": 416,
+    "cacheWrite": 614761,
+    "cacheRead": 19115394,
+    "output": 98487
+  },
+  "2026-10-27": {
+    "input": 1964,
+    "cacheWrite": 3203194,
+    "cacheRead": 185854923,
+    "output": 675156
+  },
+  "2026-10-28": {
+    "input": 568,
+    "cacheWrite": 1629674,
+    "cacheRead": 80567886,
+    "output": 244919
+  },
+  "2026-10-29": {
+    "input": 694,
+    "cacheWrite": 2201193,
+    "cacheRead": 73125782,
+    "output": 299008
+  },
+  "2026-10-30": {
+    "input": 1316,
+    "cacheWrite": 1895460,
+    "cacheRead": 115965320,
+    "output": 462411
+  },
+  "2026-11-01": {
+    "input": 390,
+    "cacheWrite": 1287566,
+    "cacheRead": 41534968,
+    "output": 75210
+  },
+  "2026-11-02": {
+    "input": 1660,
+    "cacheWrite": 1991106,
+    "cacheRead": 268171355,
+    "output": 621429
+  },
+  "2026-11-03": {
+    "input": 3702,
+    "cacheWrite": 5230169,
+    "cacheRead": 326751826,
+    "output": 653847
+  },
+  "2026-11-04": {
+    "input": 7178,
+    "cacheWrite": 3571672,
+    "cacheRead": 183328190,
+    "output": 488246
+  },
+  "2026-11-05": {
+    "input": 1752,
+    "cacheWrite": 2060499,
+    "cacheRead": 201337593,
+    "output": 647198
+  },
+  "2026-11-06": {
+    "input": 508,
+    "cacheWrite": 550314,
+    "cacheRead": 37298714,
+    "output": 173069
+  }
+}

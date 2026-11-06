@@ -1,6 +1,6 @@
 // Renders terminal.svg from repos.json using live GitHub stats.
 // Usage: GITHUB_TOKEN=... node render.mjs
-import { readFile, writeFile } from 'node:fs/promises'
+import { readdir, readFile, writeFile } from 'node:fs/promises'
 import { loadTokens, themes } from './design/tokens-css.mjs'
 
 const FRESH_DAYS = 7
@@ -112,6 +112,42 @@ class GitHub {
     return (await res.json()).length
   }
 
+  async graphql(query) {
+    const res = await this.fetch('https://api.github.com/graphql', {
+      method: 'POST',
+      headers: { Authorization: `Bearer ${this.token}` },
+      body: JSON.stringify({ query }),
+    })
+    const body = await res.json()
+    if (!res.ok || body.errors) {
+      throw new Error(`graphql: ${res.status} ${JSON.stringify(body.errors ?? body)}`)
+    }
+    return body.data
+  }
+
+  // Search counts, so these are PRs reviewed and issues or PRs commented on,
+  // not individual reviews or comments. The user's own PRs merged with no review
+  // count as reviewed: search has no merged-by, and nobody else reviewed them.
+  async activity(repos, user) {
+    const count = (alias, query) =>
+      `${alias}: search(type: ISSUE, query: ${JSON.stringify(`repo:${query}`)}) { issueCount }`
+    const searches = repos.flatMap((repo, i) => [
+      count(`r${i}`, `${repo} is:pr reviewed-by:${user} -author:${user}`),
+      count(`m${i}`, `${repo} is:pr author:${user} is:merged review:none`),
+      count(`c${i}`, `${repo} commenter:${user}`),
+    ])
+    const data = await this.graphql(`{ ${searches.join('\n')} }`)
+    return new Map(
+      repos.map((repo, i) => [
+        repo,
+        {
+          reviews: data[`r${i}`].issueCount + data[`m${i}`].issueCount,
+          comments: data[`c${i}`].issueCount,
+        },
+      ]),
+    )
+  }
+
   async stats(repo, user) {
     const info = await (await this.get(`repos/${repo}`)).json()
     const [mine, total] = await Promise.all([
@@ -133,6 +169,8 @@ const COLS = [
   { head: 'WHAT', w: 21 },
   { head: 'UPDATED', w: 9 },
   { head: 'COMMITS', w: 11, right: true },
+  { head: 'REVIEWS', w: 7, right: true },
+  { head: 'COMMENTS', w: 8, right: true },
   { head: 'ROLE', w: 12 },
 ]
 
@@ -168,7 +206,7 @@ function visibleGroups(config, stats) {
     .filter((group) => group.repos.length > 0)
 }
 
-function tableLines(config, groups, stats) {
+function tableLines(config, groups, stats, activity) {
   const lines = [rule(), row(COLS.map((c) => [c.head, C.text])), rule()]
   for (const group of groups) {
     if (group.name) {
@@ -176,6 +214,7 @@ function tableLines(config, groups, stats) {
     }
     for (const entry of group.repos) {
       const { info, mine, total } = stats.get(entry.repo)
+      const { reviews, comments } = activity.get(entry.repo)
       const age = daysAgo(info.pushed_at)
       lines.push(
         row([
@@ -183,6 +222,8 @@ function tableLines(config, groups, stats) {
           [entry.what, C.text],
           [age === 0 ? 'today' : `${age}d ago`, age < FRESH_DAYS ? C.fresh : C.text],
           [`${mine}/${total}`, C.text],
+          [String(reviews), C.text],
+          [String(comments), C.text],
           [role(info, config.user), C.role],
         ]),
       )
@@ -197,9 +238,11 @@ const shortDate = (day) =>
 
 // Rounds the y-axis top up to a value whose half is a whole, readable number.
 function axisMax(max) {
-  const unit = max <= 10 ? 2 : max <= 50 ? 10 : max <= 200 ? 20 : 100
+  const unit = max <= 10 ? 2 : max <= 50 ? 10 : max <= 200 ? 20 : 2 * 10 ** (Math.floor(Math.log10(max)) - 1)
   return Math.ceil(max / unit) * unit
 }
+
+const compact = new Intl.NumberFormat('en', { notation: 'compact', maximumFractionDigits: 1 }).format
 
 // A bar from the baseline with rounded top corners (Barrio's radius-sm).
 function barPath(x, w, top, bottom) {
@@ -209,7 +252,7 @@ function barPath(x, w, top, bottom) {
 }
 
 // One bar per day with a y-axis, spanning `width` from `x`. Only the peak gets a value label.
-function chart(days, x, top, width) {
+function chart(days, unit, x, top, width) {
   const counts = days.map(([, n]) => n)
   const max = Math.max(1, ...counts)
   const yMax = axisMax(max)
@@ -221,7 +264,7 @@ function chart(days, x, top, width) {
 
   const axis = [0, yMax / 2, yMax].flatMap((tick) => [
     `<line class="${tick ? 'grid' : 'baseline'}" x1="${plotX}" x2="${x + width}" y1="${y(tick)}" y2="${y(tick)}"/>`,
-    `<text class="${C.dim} tick" x="${plotX - 8}" y="${y(tick) + 4}" text-anchor="end">${tick}</text>`,
+    `<text class="${C.dim} tick" x="${plotX - 8}" y="${y(tick) + 4}" text-anchor="end">${compact(tick)}</text>`,
   ])
   const peak = counts.indexOf(max)
   const bars = counts.flatMap((n, i) => {
@@ -231,12 +274,12 @@ function chart(days, x, top, width) {
     const bx = plotX + i * slot + BAR_GAP / 2
     const marks = [`<path class="mark" d="${barPath(bx, slot - BAR_GAP, y(n), bottom)}"/>`]
     if (i === peak) {
-      marks.push(`<text class="ink value" x="${(bx + (slot - BAR_GAP) / 2).toFixed(1)}" y="${y(n) - 5}" text-anchor="middle">${n}</text>`)
+      marks.push(`<text class="ink value" x="${(bx + (slot - BAR_GAP) / 2).toFixed(1)}" y="${y(n) - 5}" text-anchor="middle">${compact(n)}</text>`)
     }
     return marks
   })
   const labelY = bottom + 20
-  const summary = `${total} commits · peak ${max}/day`
+  const summary = `${compact(total)} ${unit} · peak ${compact(max)}/day`
   const labels = [
     `<text x="${plotX}" y="${labelY}" class="${C.dim}">${esc(shortDate(days[0][0]))}</text>`,
     `<text x="${plotX + (width - AXIS_W) / 2}" y="${labelY}" text-anchor="middle" class="${C.dim}">${esc(summary)}</text>`,
@@ -245,7 +288,7 @@ function chart(days, x, top, width) {
   return { markup: [...axis, ...bars, ...labels].join('\n  '), bottom: labelY }
 }
 
-function svg(config, groups, table, days) {
+function svg(config, groups, table, days, tokenDays) {
   const repoCount = groups.reduce((n, g) => n + g.repos.length, 0)
   const lines = [
     [['$ ', C.prompt], [config.command, C.text]],
@@ -257,14 +300,22 @@ function svg(config, groups, table, days) {
   ]
   const tableW = table[0][0][0].length * CHAR_W
   const width = Math.ceil(PAD_X * 2 + tableW)
-  const graph = chart(days, PAD_X, BAR_H + 36 + (lines.length - 1) * LINE_H + 28, tableW)
-  const height = Math.ceil(graph.bottom + 24)
-  const text = lines
-    .map((segs, i) => {
-      const spans = segs.map(([t, c]) => `<tspan class="${c}">${esc(t)}</tspan>`).join('')
-      return `<text x="${PAD_X}" y="${BAR_H + 36 + i * LINE_H}">${spans}</text>`
-    })
-    .join('\n  ')
+  const textLine = (segs, y) =>
+    `<text x="${PAD_X}" y="${y}">${segs.map(([t, c]) => `<tspan class="${c}">${esc(t)}</tspan>`).join('')}</text>`
+  const graph = chart(days, 'commits', PAD_X, BAR_H + 36 + (lines.length - 1) * LINE_H + 28, tableW)
+  const graphs = [graph.markup]
+  let bottom = graph.bottom
+  if (tokenDays.length) {
+    const commandY = bottom + 48
+    const tokens = chart(tokenDays, 'tokens', PAD_X, commandY + 28, tableW)
+    graphs.push(
+      textLine([['$ ', C.prompt], [`probe log --tokens --per day --since ${CHART_DAYS}d`, C.text]], commandY),
+      tokens.markup,
+    )
+    bottom = tokens.bottom
+  }
+  const height = Math.ceil(bottom + 24)
+  const text = lines.map((segs, i) => textLine(segs, BAR_H + 36 + i * LINE_H)).join('\n  ')
   // A rounded card with a wash header clipped to its top corners, holding a
   // bracketed label and a muted count: [ ~/PROJECTS ] 10.
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" font-family="${TOKENS.type.families.mono.replace(/"/g, "'")}" font-size="${FONT}" xml:space="preserve">
@@ -277,9 +328,30 @@ function svg(config, groups, table, days) {
   <line class="edge" x1="0" x2="${width}" y1="${BAR_H + 0.5}" y2="${BAR_H + 0.5}"/>
   <text x="${PAD_X}" y="${BAR_H / 2 + 4}"><tspan class="${C.bracket} label">[ </tspan><tspan class="ink label">${esc(config.title.toUpperCase())}</tspan><tspan class="${C.bracket} label"> ]</tspan><tspan class="${C.dim} label">${esc(` ${repoCount}`)}</tspan></text>
   ${text}
-  ${graph.markup}
+  ${graphs.join('\n  ')}
 </svg>
 `
+}
+
+// Every machine's usage/<host>.json (written by usage.mjs) summed per UTC day,
+// oldest first, as [date, tokens] pairs. Empty when no machine has synced yet.
+async function tokensPerDay(days) {
+  const dir = new URL('./usage/', import.meta.url)
+  const files = await readdir(dir).catch(() => [])
+  const totals = new Map()
+  for (const file of files.filter((f) => f.endsWith('.json'))) {
+    const machine = JSON.parse(await readFile(new URL(file, dir), 'utf8'))
+    for (const [day, d] of Object.entries(machine)) {
+      totals.set(day, (totals.get(day) ?? 0) + d.input + d.cacheWrite + d.cacheRead + d.output)
+    }
+  }
+  if (!totals.size) {
+    return []
+  }
+  return Array.from({ length: days }, (_, i) => {
+    const day = new Date(Date.now() - (days - 1 - i) * 86_400_000).toISOString().slice(0, 10)
+    return [day, totals.get(day) ?? 0]
+  })
 }
 
 // Without a token the private repos 404, and a partial render would overwrite the good SVG.
@@ -291,13 +363,14 @@ if (!process.env.GITHUB_TOKEN) {
 const config = JSON.parse(await readFile(new URL('./repos.json', import.meta.url), 'utf8'))
 const github = new GitHub(process.env.GITHUB_TOKEN)
 const repos = config.groups.flatMap((g) => g.repos.map((r) => r.repo))
-const [stats, days] = await Promise.all([
+const [stats, days, activity] = await Promise.all([
   Promise.all(repos.map(async (r) => [r, await github.stats(r, config.user)])).then((s) => new Map(s)),
   github.commitsPerWeekday(repos, config.user, CHART_DAYS),
+  github.activity(repos, config.user),
 ])
 const groups = visibleGroups(config, stats)
 await writeFile(
   new URL('./terminal.svg', import.meta.url),
-  svg(config, groups, tableLines(config, groups, stats), days),
+  svg(config, groups, tableLines(config, groups, stats, activity), days, await tokensPerDay(CHART_DAYS)),
 )
 console.log(`rendered ${groups.reduce((n, g) => n + g.repos.length, 0)} of ${repos.length} repos`)
