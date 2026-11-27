@@ -78,19 +78,19 @@
   <text x="32" y="148"><tspan class="ink-faint">+--------------------------+-----------------------+-----------+-------------+---------+----------+--------------+</tspan></text>
   <text x="32" y="172"><tspan class="ink-faint">|&#160;</tspan><tspan class="ink">REPO&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink">WHAT&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink">UPDATED&#160;&#160;</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink">&#160;&#160;&#160;&#160;COMMITS</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink">REVIEWS</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink">COMMENTS</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink">ROLE&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</tspan><tspan class="ink-faint">&#160;|</tspan></text>
   <text x="32" y="196"><tspan class="ink-faint">+--------------------------+-----------------------+-----------+-------------+---------+----------+--------------+</tspan></text>
-  <text x="32" y="220"><tspan class="ink-faint">|&#160;</tspan><tspan class="accent">herald&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink">LLM&#160;prompt&#160;editor&#160;&#160;&#160;&#160;</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink">16d&#160;ago&#160;&#160;</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink">&#160;&#160;&#160;&#160;&#160;&#160;11/11</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink">&#160;&#160;&#160;&#160;&#160;&#160;2</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink">&#160;&#160;&#160;&#160;&#160;&#160;&#160;0</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink-muted">owner&#160;&#160;&#160;&#160;&#160;&#160;&#160;</tspan><tspan class="ink-faint">&#160;|</tspan></text>
-  <text x="32" y="244"><tspan class="ink-faint">|&#160;</tspan><tspan class="accent">ingot&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink">memory&#160;for&#160;agents&#160;&#160;&#160;&#160;</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="cilantro">2d&#160;ago&#160;&#160;&#160;</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink">&#160;&#160;&#160;&#160;206/206</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink">&#160;&#160;&#160;&#160;&#160;59</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink">&#160;&#160;&#160;&#160;&#160;&#160;&#160;0</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink-muted">owner&#160;&#160;&#160;&#160;&#160;&#160;&#160;</tspan><tspan class="ink-faint">&#160;|</tspan></text>
-  <text x="32" y="268"><tspan class="ink-faint">|&#160;</tspan><tspan class="accent">crucible&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink">durable&#160;agent&#160;harness</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="cilantro">2d&#160;ago&#160;&#160;&#160;</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink">&#160;&#160;&#160;&#160;247/247</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink">&#160;&#160;&#160;&#160;&#160;&#160;6</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink">&#160;&#160;&#160;&#160;&#160;&#160;&#160;0</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink-muted">maintainer&#160;&#160;</tspan><tspan class="ink-faint">&#160;|</tspan></text>
-  <text x="32" y="292"><tspan class="ink-faint">|&#160;</tspan><tspan class="accent">toon-experiment&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink">TOON&#160;vs&#160;JSON&#160;for&#160;LLMs</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink">192d&#160;ago&#160;</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;1/1</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink">&#160;&#160;&#160;&#160;&#160;&#160;0</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink">&#160;&#160;&#160;&#160;&#160;&#160;&#160;0</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink-muted">maintainer&#160;&#160;</tspan><tspan class="ink-faint">&#160;|</tspan></text>
-  <text x="32" y="316"><tspan class="ink-faint">|&#160;</tspan><tspan class="accent">forge&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink">bun&#160;monorepo&#160;+&#160;mem&#160;&#160;&#160;</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink">84d&#160;ago&#160;&#160;</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;7/7</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink">&#160;&#160;&#160;&#160;&#160;&#160;0</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink">&#160;&#160;&#160;&#160;&#160;&#160;&#160;0</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink-muted">owner&#160;&#160;&#160;&#160;&#160;&#160;&#160;</tspan><tspan class="ink-faint">&#160;|</tspan></text>
+  <text x="32" y="220"><tspan class="ink-faint">|&#160;</tspan><tspan class="accent">herald&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink">LLM&#160;prompt&#160;editor&#160;&#160;&#160;&#160;</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink">17d&#160;ago&#160;&#160;</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink">&#160;&#160;&#160;&#160;&#160;&#160;11/11</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink">&#160;&#160;&#160;&#160;&#160;&#160;2</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink">&#160;&#160;&#160;&#160;&#160;&#160;&#160;0</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink-muted">owner&#160;&#160;&#160;&#160;&#160;&#160;&#160;</tspan><tspan class="ink-faint">&#160;|</tspan></text>
+  <text x="32" y="244"><tspan class="ink-faint">|&#160;</tspan><tspan class="accent">ingot&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink">memory&#160;for&#160;agents&#160;&#160;&#160;&#160;</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="cilantro">3d&#160;ago&#160;&#160;&#160;</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink">&#160;&#160;&#160;&#160;206/206</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink">&#160;&#160;&#160;&#160;&#160;59</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink">&#160;&#160;&#160;&#160;&#160;&#160;&#160;0</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink-muted">owner&#160;&#160;&#160;&#160;&#160;&#160;&#160;</tspan><tspan class="ink-faint">&#160;|</tspan></text>
+  <text x="32" y="268"><tspan class="ink-faint">|&#160;</tspan><tspan class="accent">crucible&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink">durable&#160;agent&#160;harness</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="cilantro">3d&#160;ago&#160;&#160;&#160;</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink">&#160;&#160;&#160;&#160;247/247</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink">&#160;&#160;&#160;&#160;&#160;&#160;6</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink">&#160;&#160;&#160;&#160;&#160;&#160;&#160;0</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink-muted">maintainer&#160;&#160;</tspan><tspan class="ink-faint">&#160;|</tspan></text>
+  <text x="32" y="292"><tspan class="ink-faint">|&#160;</tspan><tspan class="accent">toon-experiment&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink">TOON&#160;vs&#160;JSON&#160;for&#160;LLMs</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink">193d&#160;ago&#160;</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;1/1</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink">&#160;&#160;&#160;&#160;&#160;&#160;0</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink">&#160;&#160;&#160;&#160;&#160;&#160;&#160;0</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink-muted">maintainer&#160;&#160;</tspan><tspan class="ink-faint">&#160;|</tspan></text>
+  <text x="32" y="316"><tspan class="ink-faint">|&#160;</tspan><tspan class="accent">forge&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink">bun&#160;monorepo&#160;+&#160;mem&#160;&#160;&#160;</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink">85d&#160;ago&#160;&#160;</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;7/7</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink">&#160;&#160;&#160;&#160;&#160;&#160;0</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink">&#160;&#160;&#160;&#160;&#160;&#160;&#160;0</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink-muted">owner&#160;&#160;&#160;&#160;&#160;&#160;&#160;</tspan><tspan class="ink-faint">&#160;|</tspan></text>
   <text x="32" y="340"><tspan class="ink-faint">+--------------------------+-----------------------+-----------+-------------+---------+----------+--------------+</tspan></text>
   <text x="32" y="364"><tspan class="ink-faint">|&#160;</tspan><tspan class="ink group">cotera&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink">&#160;&#160;&#160;&#160;&#160;&#160;&#160;</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</tspan><tspan class="ink-faint">&#160;|</tspan></text>
-  <text x="32" y="388"><tspan class="ink-faint">|&#160;</tspan><tspan class="accent">cotera&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink">TS&#160;monorepo&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="cilantro">today&#160;&#160;&#160;&#160;</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink">&#160;4058/16475</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink">&#160;&#160;&#160;3104</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink">&#160;&#160;&#160;&#160;2715</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink-muted">maintainer&#160;&#160;</tspan><tspan class="ink-faint">&#160;|</tspan></text>
-  <text x="32" y="412"><tspan class="ink-faint">|&#160;</tspan><tspan class="accent">website&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink">cotera.co&#160;site&#160;&#160;&#160;&#160;&#160;&#160;&#160;</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="cilantro">today&#160;&#160;&#160;&#160;</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink">&#160;&#160;&#160;&#160;&#160;18/545</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink">&#160;&#160;&#160;&#160;&#160;52</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink">&#160;&#160;&#160;&#160;&#160;&#160;53</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink-muted">maintainer&#160;&#160;</tspan><tspan class="ink-faint">&#160;|</tspan></text>
-  <text x="32" y="436"><tspan class="ink-faint">|&#160;</tspan><tspan class="accent">griddle&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink">React&#160;data&#160;grid&#160;&#160;&#160;&#160;&#160;&#160;</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink">79d&#160;ago&#160;&#160;</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink">&#160;&#160;&#160;&#160;&#160;&#160;22/22</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink">&#160;&#160;&#160;&#160;&#160;&#160;1</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink">&#160;&#160;&#160;&#160;&#160;&#160;&#160;0</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink-muted">maintainer&#160;&#160;</tspan><tspan class="ink-faint">&#160;|</tspan></text>
-  <text x="32" y="460"><tspan class="ink-faint">|&#160;</tspan><tspan class="accent">watchtower&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink">observable&#160;viewmodels</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink">90d&#160;ago&#160;&#160;</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;8/8</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink">&#160;&#160;&#160;&#160;&#160;&#160;1</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink">&#160;&#160;&#160;&#160;&#160;&#160;&#160;0</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink-muted">maintainer&#160;&#160;</tspan><tspan class="ink-faint">&#160;|</tspan></text>
-  <text x="32" y="484"><tspan class="ink-faint">|&#160;</tspan><tspan class="accent">coco-snowflake&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink">Snowflake&#160;native&#160;app&#160;</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink">140d&#160;ago&#160;</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;1/1</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink">&#160;&#160;&#160;&#160;&#160;&#160;0</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink">&#160;&#160;&#160;&#160;&#160;&#160;&#160;0</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink-muted">maintainer&#160;&#160;</tspan><tspan class="ink-faint">&#160;|</tspan></text>
-  <text x="32" y="508"><tspan class="ink-faint">|&#160;</tspan><tspan class="accent">modal_apps&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink">Modal&#160;pipelines&#160;&#160;&#160;&#160;&#160;&#160;</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink">16d&#160;ago&#160;&#160;</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink">&#160;&#160;&#160;&#160;&#160;&#160;1/204</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink">&#160;&#160;&#160;&#160;&#160;&#160;4</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink">&#160;&#160;&#160;&#160;&#160;&#160;&#160;4</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink-muted">maintainer&#160;&#160;</tspan><tspan class="ink-faint">&#160;|</tspan></text>
+  <text x="32" y="388"><tspan class="ink-faint">|&#160;</tspan><tspan class="accent">cotera&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink">TS&#160;monorepo&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="cilantro">1d&#160;ago&#160;&#160;&#160;</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink">&#160;4058/16475</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink">&#160;&#160;&#160;3104</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink">&#160;&#160;&#160;&#160;2715</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink-muted">maintainer&#160;&#160;</tspan><tspan class="ink-faint">&#160;|</tspan></text>
+  <text x="32" y="412"><tspan class="ink-faint">|&#160;</tspan><tspan class="accent">website&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink">cotera.co&#160;site&#160;&#160;&#160;&#160;&#160;&#160;&#160;</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="cilantro">1d&#160;ago&#160;&#160;&#160;</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink">&#160;&#160;&#160;&#160;&#160;18/545</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink">&#160;&#160;&#160;&#160;&#160;52</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink">&#160;&#160;&#160;&#160;&#160;&#160;53</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink-muted">maintainer&#160;&#160;</tspan><tspan class="ink-faint">&#160;|</tspan></text>
+  <text x="32" y="436"><tspan class="ink-faint">|&#160;</tspan><tspan class="accent">griddle&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink">React&#160;data&#160;grid&#160;&#160;&#160;&#160;&#160;&#160;</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink">80d&#160;ago&#160;&#160;</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink">&#160;&#160;&#160;&#160;&#160;&#160;22/22</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink">&#160;&#160;&#160;&#160;&#160;&#160;1</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink">&#160;&#160;&#160;&#160;&#160;&#160;&#160;0</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink-muted">maintainer&#160;&#160;</tspan><tspan class="ink-faint">&#160;|</tspan></text>
+  <text x="32" y="460"><tspan class="ink-faint">|&#160;</tspan><tspan class="accent">watchtower&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink">observable&#160;viewmodels</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink">91d&#160;ago&#160;&#160;</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;8/8</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink">&#160;&#160;&#160;&#160;&#160;&#160;1</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink">&#160;&#160;&#160;&#160;&#160;&#160;&#160;0</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink-muted">maintainer&#160;&#160;</tspan><tspan class="ink-faint">&#160;|</tspan></text>
+  <text x="32" y="484"><tspan class="ink-faint">|&#160;</tspan><tspan class="accent">coco-snowflake&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink">Snowflake&#160;native&#160;app&#160;</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink">141d&#160;ago&#160;</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;1/1</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink">&#160;&#160;&#160;&#160;&#160;&#160;0</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink">&#160;&#160;&#160;&#160;&#160;&#160;&#160;0</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink-muted">maintainer&#160;&#160;</tspan><tspan class="ink-faint">&#160;|</tspan></text>
+  <text x="32" y="508"><tspan class="ink-faint">|&#160;</tspan><tspan class="accent">modal_apps&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink">Modal&#160;pipelines&#160;&#160;&#160;&#160;&#160;&#160;</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink">17d&#160;ago&#160;&#160;</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink">&#160;&#160;&#160;&#160;&#160;&#160;1/204</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink">&#160;&#160;&#160;&#160;&#160;&#160;4</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink">&#160;&#160;&#160;&#160;&#160;&#160;&#160;4</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink-muted">maintainer&#160;&#160;</tspan><tspan class="ink-faint">&#160;|</tspan></text>
   <text x="32" y="532"><tspan class="ink-faint">+--------------------------+-----------------------+-----------+-------------+---------+----------+--------------+</tspan></text>
   <text x="32" y="556"><tspan class="ink-faint">|&#160;</tspan><tspan class="ink group">omni&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink">&#160;&#160;&#160;&#160;&#160;&#160;&#160;</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</tspan><tspan class="ink-faint">&#160;|</tspan></text>
   <text x="32" y="580"><tspan class="ink-faint">|&#160;</tspan><tspan class="accent">omni&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink">Omni&#160;monorepo&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="cilantro">today&#160;&#160;&#160;&#160;</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink">&#160;&#160;&#160;&#160;1/33452</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink">&#160;&#160;&#160;&#160;&#160;69</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink">&#160;&#160;&#160;&#160;&#160;104</tspan><tspan class="ink-faint">&#160;|&#160;</tspan><tspan class="ink-muted">contributor&#160;</tspan><tspan class="ink-faint">&#160;|</tspan></text>
@@ -103,65 +103,65 @@
   <text class="ink-muted tick" x="64" y="732" text-anchor="end">30</text>
   <line class="grid" x1="72" x2="989.6" y1="680" y2="680"/>
   <text class="ink-muted tick" x="64" y="684" text-anchor="end">60</text>
-  <path class="mark-1" d="M73.0 776.0V776.0Q73.0 772.8 76.2 772.8H82.1Q85.3 772.8 85.3 776.0V776.0Z"/>
-  <path class="mark-1" d="M87.3 776.0V744.8Q87.3 740.8 91.3 740.8H95.7Q99.7 740.8 99.7 744.8V776.0Z"/>
-  <path class="mark-1" d="M101.7 776.0V756.0Q101.7 752.0 105.7 752.0H110.0Q114.0 752.0 114.0 756.0V776.0Z"/>
-  <path class="mark-1" d="M116.0 776.0V764.0Q116.0 760.0 120.0 760.0H124.3Q128.3 760.0 128.3 764.0V776.0Z"/>
-  <path class="mark-1" d="M130.3 776.0V775.2Q130.3 771.2 134.3 771.2H138.7Q142.7 771.2 142.7 775.2V776.0Z"/>
-  <path class="mark-1" d="M144.7 776.0V757.6Q144.7 753.6 148.7 753.6H153.0Q157.0 753.6 157.0 757.6V776.0Z"/>
-  <path class="mark-1" d="M159.0 776.0V736.8Q159.0 732.8 163.0 732.8H167.4Q171.4 732.8 171.4 736.8V776.0Z"/>
-  <path class="mark-1" d="M173.4 776.0V744.8Q173.4 740.8 177.4 740.8H181.7Q185.7 740.8 185.7 744.8V776.0Z"/>
-  <path class="mark-1" d="M187.7 776.0V752.8Q187.7 748.8 191.7 748.8H196.0Q200.0 748.8 200.0 752.8V776.0Z"/>
-  <path class="mark-1" d="M202.0 776.0V772.0Q202.0 768.0 206.0 768.0H210.4Q214.4 768.0 214.4 772.0V776.0Z"/>
-  <path class="mark-1" d="M216.4 776.0V765.6Q216.4 761.6 220.4 761.6H224.7Q228.7 761.6 228.7 765.6V776.0Z"/>
-  <path class="mark-1" d="M230.7 776.0V748.0Q230.7 744.0 234.7 744.0H239.1Q243.1 744.0 243.1 748.0V776.0Z"/>
-  <path class="mark-1" d="M245.1 776.0V752.8Q245.1 748.8 249.1 748.8H253.4Q257.4 748.8 257.4 752.8V776.0Z"/>
-  <path class="mark-1" d="M259.4 776.0V732.0Q259.4 728.0 263.4 728.0H267.7Q271.7 728.0 271.7 732.0V776.0Z"/>
-  <path class="mark-1" d="M273.7 776.0V775.2Q273.7 771.2 277.7 771.2H282.1Q286.1 771.2 286.1 775.2V776.0Z"/>
-  <path class="mark-1" d="M288.1 776.0V733.6Q288.1 729.6 292.1 729.6H296.4Q300.4 729.6 300.4 733.6V776.0Z"/>
-  <path class="mark-1" d="M302.4 776.0V746.4Q302.4 742.4 306.4 742.4H310.7Q314.7 742.4 314.7 746.4V776.0Z"/>
-  <path class="mark-1" d="M316.7 776.0V772.0Q316.7 768.0 320.7 768.0H325.1Q329.1 768.0 329.1 772.0V776.0Z"/>
-  <path class="mark-1" d="M331.1 776.0V746.4Q331.1 742.4 335.1 742.4H339.4Q343.4 742.4 343.4 746.4V776.0Z"/>
-  <path class="mark-1" d="M345.4 776.0V770.4Q345.4 766.4 349.4 766.4H353.8Q357.8 766.4 357.8 770.4V776.0Z"/>
-  <path class="mark-1" d="M359.8 776.0V751.2Q359.8 747.2 363.8 747.2H368.1Q372.1 747.2 372.1 751.2V776.0Z"/>
-  <path class="mark-1" d="M374.1 776.0V765.6Q374.1 761.6 378.1 761.6H382.4Q386.4 761.6 386.4 765.6V776.0Z"/>
-  <path class="mark-1" d="M388.4 776.0V751.2Q388.4 747.2 392.4 747.2H396.8Q400.8 747.2 400.8 751.2V776.0Z"/>
-  <path class="mark-1" d="M402.8 776.0V767.2Q402.8 763.2 406.8 763.2H411.1Q415.1 763.2 415.1 767.2V776.0Z"/>
-  <path class="mark-1" d="M417.1 776.0V773.6Q417.1 769.6 421.1 769.6H425.4Q429.4 769.6 429.4 773.6V776.0Z"/>
-  <path class="mark-1" d="M431.4 776.0V776.0Q431.4 772.8 434.6 772.8H440.6Q443.8 772.8 443.8 776.0V776.0Z"/>
-  <path class="mark-1" d="M445.8 776.0V775.2Q445.8 771.2 449.8 771.2H454.1Q458.1 771.2 458.1 775.2V776.0Z"/>
-  <path class="mark-1" d="M460.1 776.0V776.0Q460.1 772.8 463.3 772.8H469.2Q472.4 772.8 472.4 776.0V776.0Z"/>
-  <path class="mark-1" d="M474.4 776.0V770.4Q474.4 766.4 478.4 766.4H482.8Q486.8 766.4 486.8 770.4V776.0Z"/>
-  <path class="mark-1" d="M488.8 776.0V768.8Q488.8 764.8 492.8 764.8H497.1Q501.1 764.8 501.1 768.8V776.0Z"/>
-  <path class="mark-1" d="M503.1 776.0V695.2Q503.1 691.2 507.1 691.2H511.5Q515.5 691.2 515.5 695.2V776.0Z"/>
-  <text class="ink value" x="509.3" y="686.2" text-anchor="middle">53</text>
-  <path class="mark-1" d="M517.5 776.0V759.2Q517.5 755.2 521.5 755.2H525.8Q529.8 755.2 529.8 759.2V776.0Z"/>
-  <path class="mark-1" d="M531.8 776.0V716.0Q531.8 712.0 535.8 712.0H540.1Q544.1 712.0 544.1 716.0V776.0Z"/>
-  <path class="mark-1" d="M546.1 776.0V701.6Q546.1 697.6 550.1 697.6H554.5Q558.5 697.6 558.5 701.6V776.0Z"/>
-  <path class="mark-1" d="M560.5 776.0V751.2Q560.5 747.2 564.5 747.2H568.8Q572.8 747.2 572.8 751.2V776.0Z"/>
-  <path class="mark-1" d="M574.8 776.0V722.4Q574.8 718.4 578.8 718.4H583.1Q587.1 718.4 587.1 722.4V776.0Z"/>
-  <path class="mark-1" d="M589.1 776.0V740.0Q589.1 736.0 593.1 736.0H597.5Q601.5 736.0 601.5 740.0V776.0Z"/>
-  <path class="mark-1" d="M603.5 776.0V767.2Q603.5 763.2 607.5 763.2H611.8Q615.8 763.2 615.8 767.2V776.0Z"/>
-  <path class="mark-1" d="M617.8 776.0V772.0Q617.8 768.0 621.8 768.0H626.2Q630.2 768.0 630.2 772.0V776.0Z"/>
-  <path class="mark-1" d="M632.2 776.0V775.2Q632.2 771.2 636.2 771.2H640.5Q644.5 771.2 644.5 775.2V776.0Z"/>
-  <path class="mark-1" d="M646.5 776.0V776.0Q646.5 772.8 649.7 772.8H655.6Q658.8 772.8 658.8 776.0V776.0Z"/>
-  <path class="mark-1" d="M660.8 776.0V773.6Q660.8 769.6 664.8 769.6H669.2Q673.2 769.6 673.2 773.6V776.0Z"/>
-  <path class="mark-1" d="M675.2 776.0V776.0Q675.2 774.4 676.8 774.4H685.9Q687.5 774.4 687.5 776.0V776.0Z"/>
-  <path class="mark-1" d="M689.5 776.0V775.2Q689.5 771.2 693.5 771.2H697.9Q701.9 771.2 701.9 775.2V776.0Z"/>
-  <path class="mark-1" d="M703.9 776.0V764.0Q703.9 760.0 707.9 760.0H712.2Q716.2 760.0 716.2 764.0V776.0Z"/>
-  <path class="mark-1" d="M718.2 776.0V759.2Q718.2 755.2 722.2 755.2H726.5Q730.5 755.2 730.5 759.2V776.0Z"/>
-  <path class="mark-1" d="M732.5 776.0V775.2Q732.5 771.2 736.5 771.2H740.9Q744.9 771.2 744.9 775.2V776.0Z"/>
-  <path class="mark-1" d="M746.9 776.0V776.0Q746.9 774.4 748.5 774.4H757.6Q759.2 774.4 759.2 776.0V776.0Z"/>
-  <path class="mark-1" d="M761.2 776.0V762.4Q761.2 758.4 765.2 758.4H769.5Q773.5 758.4 773.5 762.4V776.0Z"/>
-  <path class="mark-1" d="M775.5 776.0V776.0Q775.5 772.8 778.7 772.8H784.7Q787.9 772.8 787.9 776.0V776.0Z"/>
-  <path class="mark-1" d="M789.9 776.0V773.6Q789.9 769.6 793.9 769.6H798.2Q802.2 769.6 802.2 773.6V776.0Z"/>
-  <path class="mark-1" d="M818.6 776.0V776.0Q818.6 774.4 820.2 774.4H829.3Q830.9 774.4 830.9 776.0V776.0Z"/>
-  <path class="mark-1" d="M832.9 776.0V775.2Q832.9 771.2 836.9 771.2H841.2Q845.2 771.2 845.2 775.2V776.0Z"/>
-  <path class="mark-1" d="M847.2 776.0V776.0Q847.2 772.8 850.4 772.8H856.4Q859.6 772.8 859.6 776.0V776.0Z"/>
-  <path class="mark-1" d="M861.6 776.0V775.2Q861.6 771.2 865.6 771.2H869.9Q873.9 771.2 873.9 775.2V776.0Z"/>
-  <path class="mark-1" d="M890.2 776.0V775.2Q890.2 771.2 894.2 771.2H898.6Q902.6 771.2 902.6 775.2V776.0Z"/>
-  <path class="mark-1" d="M904.6 776.0V772.0Q904.6 768.0 908.6 768.0H912.9Q916.9 768.0 916.9 772.0V776.0Z"/>
-  <path class="mark-1" d="M947.6 776.0V776.0Q947.6 774.4 949.2 774.4H958.3Q959.9 774.4 959.9 776.0V776.0Z"/>
+  <path class="mark-1" d="M73.0 776.0V776.0Q73.0 772.8 76.2 772.8H81.9Q85.1 772.8 85.1 776.0V776.0Z"/>
+  <path class="mark-1" d="M87.1 776.0V744.8Q87.1 740.8 91.1 740.8H95.2Q99.2 740.8 99.2 744.8V776.0Z"/>
+  <path class="mark-1" d="M101.2 776.0V756.0Q101.2 752.0 105.2 752.0H109.4Q113.4 752.0 113.4 756.0V776.0Z"/>
+  <path class="mark-1" d="M115.4 776.0V764.0Q115.4 760.0 119.4 760.0H123.5Q127.5 760.0 127.5 764.0V776.0Z"/>
+  <path class="mark-1" d="M129.5 776.0V775.2Q129.5 771.2 133.5 771.2H137.6Q141.6 771.2 141.6 775.2V776.0Z"/>
+  <path class="mark-1" d="M143.6 776.0V757.6Q143.6 753.6 147.6 753.6H151.7Q155.7 753.6 155.7 757.6V776.0Z"/>
+  <path class="mark-1" d="M157.7 776.0V736.8Q157.7 732.8 161.7 732.8H165.8Q169.8 732.8 169.8 736.8V776.0Z"/>
+  <path class="mark-1" d="M171.8 776.0V744.8Q171.8 740.8 175.8 740.8H179.9Q183.9 740.8 183.9 744.8V776.0Z"/>
+  <path class="mark-1" d="M185.9 776.0V752.8Q185.9 748.8 189.9 748.8H194.1Q198.1 748.8 198.1 752.8V776.0Z"/>
+  <path class="mark-1" d="M200.1 776.0V772.0Q200.1 768.0 204.1 768.0H208.2Q212.2 768.0 212.2 772.0V776.0Z"/>
+  <path class="mark-1" d="M214.2 776.0V765.6Q214.2 761.6 218.2 761.6H222.3Q226.3 761.6 226.3 765.6V776.0Z"/>
+  <path class="mark-1" d="M228.3 776.0V748.0Q228.3 744.0 232.3 744.0H236.4Q240.4 744.0 240.4 748.0V776.0Z"/>
+  <path class="mark-1" d="M242.4 776.0V752.8Q242.4 748.8 246.4 748.8H250.5Q254.5 748.8 254.5 752.8V776.0Z"/>
+  <path class="mark-1" d="M256.5 776.0V732.0Q256.5 728.0 260.5 728.0H264.6Q268.6 728.0 268.6 732.0V776.0Z"/>
+  <path class="mark-1" d="M270.6 776.0V775.2Q270.6 771.2 274.6 771.2H278.8Q282.8 771.2 282.8 775.2V776.0Z"/>
+  <path class="mark-1" d="M284.8 776.0V733.6Q284.8 729.6 288.8 729.6H292.9Q296.9 729.6 296.9 733.6V776.0Z"/>
+  <path class="mark-1" d="M298.9 776.0V746.4Q298.9 742.4 302.9 742.4H307.0Q311.0 742.4 311.0 746.4V776.0Z"/>
+  <path class="mark-1" d="M313.0 776.0V772.0Q313.0 768.0 317.0 768.0H321.1Q325.1 768.0 325.1 772.0V776.0Z"/>
+  <path class="mark-1" d="M327.1 776.0V746.4Q327.1 742.4 331.1 742.4H335.2Q339.2 742.4 339.2 746.4V776.0Z"/>
+  <path class="mark-1" d="M341.2 776.0V770.4Q341.2 766.4 345.2 766.4H349.3Q353.3 766.4 353.3 770.4V776.0Z"/>
+  <path class="mark-1" d="M355.3 776.0V751.2Q355.3 747.2 359.3 747.2H363.5Q367.5 747.2 367.5 751.2V776.0Z"/>
+  <path class="mark-1" d="M369.5 776.0V765.6Q369.5 761.6 373.5 761.6H377.6Q381.6 761.6 381.6 765.6V776.0Z"/>
+  <path class="mark-1" d="M383.6 776.0V751.2Q383.6 747.2 387.6 747.2H391.7Q395.7 747.2 395.7 751.2V776.0Z"/>
+  <path class="mark-1" d="M397.7 776.0V767.2Q397.7 763.2 401.7 763.2H405.8Q409.8 763.2 409.8 767.2V776.0Z"/>
+  <path class="mark-1" d="M411.8 776.0V773.6Q411.8 769.6 415.8 769.6H419.9Q423.9 769.6 423.9 773.6V776.0Z"/>
+  <path class="mark-1" d="M425.9 776.0V776.0Q425.9 772.8 429.1 772.8H434.8Q438.0 772.8 438.0 776.0V776.0Z"/>
+  <path class="mark-1" d="M440.0 776.0V775.2Q440.0 771.2 444.0 771.2H448.2Q452.2 771.2 452.2 775.2V776.0Z"/>
+  <path class="mark-1" d="M454.2 776.0V776.0Q454.2 772.8 457.4 772.8H463.1Q466.3 772.8 466.3 776.0V776.0Z"/>
+  <path class="mark-1" d="M468.3 776.0V770.4Q468.3 766.4 472.3 766.4H476.4Q480.4 766.4 480.4 770.4V776.0Z"/>
+  <path class="mark-1" d="M482.4 776.0V768.8Q482.4 764.8 486.4 764.8H490.5Q494.5 764.8 494.5 768.8V776.0Z"/>
+  <path class="mark-1" d="M496.5 776.0V695.2Q496.5 691.2 500.5 691.2H504.6Q508.6 691.2 508.6 695.2V776.0Z"/>
+  <text class="ink value" x="502.6" y="686.2" text-anchor="middle">53</text>
+  <path class="mark-1" d="M510.6 776.0V759.2Q510.6 755.2 514.6 755.2H518.7Q522.7 755.2 522.7 759.2V776.0Z"/>
+  <path class="mark-1" d="M524.7 776.0V716.0Q524.7 712.0 528.7 712.0H532.9Q536.9 712.0 536.9 716.0V776.0Z"/>
+  <path class="mark-1" d="M538.9 776.0V701.6Q538.9 697.6 542.9 697.6H547.0Q551.0 697.6 551.0 701.6V776.0Z"/>
+  <path class="mark-1" d="M553.0 776.0V751.2Q553.0 747.2 557.0 747.2H561.1Q565.1 747.2 565.1 751.2V776.0Z"/>
+  <path class="mark-1" d="M567.1 776.0V722.4Q567.1 718.4 571.1 718.4H575.2Q579.2 718.4 579.2 722.4V776.0Z"/>
+  <path class="mark-1" d="M581.2 776.0V740.0Q581.2 736.0 585.2 736.0H589.3Q593.3 736.0 593.3 740.0V776.0Z"/>
+  <path class="mark-1" d="M595.3 776.0V767.2Q595.3 763.2 599.3 763.2H603.4Q607.4 763.2 607.4 767.2V776.0Z"/>
+  <path class="mark-1" d="M609.4 776.0V772.0Q609.4 768.0 613.4 768.0H617.6Q621.6 768.0 621.6 772.0V776.0Z"/>
+  <path class="mark-1" d="M623.6 776.0V775.2Q623.6 771.2 627.6 771.2H631.7Q635.7 771.2 635.7 775.2V776.0Z"/>
+  <path class="mark-1" d="M637.7 776.0V776.0Q637.7 772.8 640.9 772.8H646.6Q649.8 772.8 649.8 776.0V776.0Z"/>
+  <path class="mark-1" d="M651.8 776.0V773.6Q651.8 769.6 655.8 769.6H659.9Q663.9 769.6 663.9 773.6V776.0Z"/>
+  <path class="mark-1" d="M665.9 776.0V776.0Q665.9 774.4 667.5 774.4H676.4Q678.0 774.4 678.0 776.0V776.0Z"/>
+  <path class="mark-1" d="M680.0 776.0V775.2Q680.0 771.2 684.0 771.2H688.1Q692.1 771.2 692.1 775.2V776.0Z"/>
+  <path class="mark-1" d="M694.1 776.0V764.0Q694.1 760.0 698.1 760.0H702.3Q706.3 760.0 706.3 764.0V776.0Z"/>
+  <path class="mark-1" d="M708.3 776.0V759.2Q708.3 755.2 712.3 755.2H716.4Q720.4 755.2 720.4 759.2V776.0Z"/>
+  <path class="mark-1" d="M722.4 776.0V775.2Q722.4 771.2 726.4 771.2H730.5Q734.5 771.2 734.5 775.2V776.0Z"/>
+  <path class="mark-1" d="M736.5 776.0V776.0Q736.5 774.4 738.1 774.4H747.0Q748.6 774.4 748.6 776.0V776.0Z"/>
+  <path class="mark-1" d="M750.6 776.0V762.4Q750.6 758.4 754.6 758.4H758.7Q762.7 758.4 762.7 762.4V776.0Z"/>
+  <path class="mark-1" d="M764.7 776.0V776.0Q764.7 772.8 767.9 772.8H773.6Q776.8 772.8 776.8 776.0V776.0Z"/>
+  <path class="mark-1" d="M778.8 776.0V773.6Q778.8 769.6 782.8 769.6H787.0Q791.0 769.6 791.0 773.6V776.0Z"/>
+  <path class="mark-1" d="M807.1 776.0V776.0Q807.1 774.4 808.7 774.4H817.6Q819.2 774.4 819.2 776.0V776.0Z"/>
+  <path class="mark-1" d="M821.2 776.0V775.2Q821.2 771.2 825.2 771.2H829.3Q833.3 771.2 833.3 775.2V776.0Z"/>
+  <path class="mark-1" d="M835.3 776.0V776.0Q835.3 772.8 838.5 772.8H844.2Q847.4 772.8 847.4 776.0V776.0Z"/>
+  <path class="mark-1" d="M849.4 776.0V775.2Q849.4 771.2 853.4 771.2H857.5Q861.5 771.2 861.5 775.2V776.0Z"/>
+  <path class="mark-1" d="M877.7 776.0V775.2Q877.7 771.2 881.7 771.2H885.8Q889.8 771.2 889.8 775.2V776.0Z"/>
+  <path class="mark-1" d="M891.8 776.0V772.0Q891.8 768.0 895.8 768.0H899.9Q903.9 768.0 903.9 772.0V776.0Z"/>
+  <path class="mark-1" d="M934.1 776.0V776.0Q934.1 774.4 935.7 774.4H944.6Q946.2 774.4 946.2 776.0V776.0Z"/>
   <text x="72" y="796" class="ink-muted">Aug&#160;31</text>
   <text x="530.8" y="796" text-anchor="middle" class="ink-muted">697&#160;commits&#160;·&#160;peak&#160;53/day</text>
   <text x="989.6" y="796" text-anchor="end" class="ink-muted">today</text>
@@ -172,64 +172,64 @@
   <text class="ink-muted tick" x="64" y="924" text-anchor="end">600M</text>
   <line class="grid" x1="72" x2="989.6" y1="872" y2="872"/>
   <text class="ink-muted tick" x="64" y="876" text-anchor="end">1.2B</text>
-  <path class="mark-1" d="M419.6 968.0V966.9H427.8V968.0Z"/>
-  <path class="mark-2" d="M419.6 966.9V966.9Q419.6 966.9 419.7 966.9H427.8Q427.8 966.9 427.8 966.9V966.9Z"/>
-  <path class="mark-1" d="M460.4 968.0V966.7H468.6V968.0Z"/>
-  <path class="mark-2" d="M460.4 966.7V966.7Q460.4 966.7 460.5 966.7H468.6Q468.6 966.7 468.6 966.7V966.7Z"/>
-  <path class="mark-1" d="M470.6 968.0V955.2H478.8V968.0Z"/>
-  <path class="mark-2" d="M470.6 955.2V955.2Q470.6 954.9 470.9 954.9H478.6Q478.8 954.9 478.8 955.2V955.2Z"/>
-  <path class="mark-1" d="M480.8 968.0V886.5H489.0V968.0Z"/>
-  <path class="mark-2" d="M480.8 886.5V886.5Q480.8 885.9 481.4 885.9H488.4Q489.0 885.9 489.0 886.5V886.5Z"/>
-  <text class="ink value" x="484.9" y="880.92835416" text-anchor="middle">1B</text>
-  <path class="mark-1" d="M491.0 968.0V931.3H499.2V968.0Z"/>
-  <path class="mark-2" d="M491.0 931.3V931.3Q491.0 931.0 491.4 931.0H498.9Q499.2 931.0 499.2 931.3V931.3Z"/>
-  <path class="mark-1" d="M511.4 968.0V959.4H519.6V968.0Z"/>
-  <path class="mark-2" d="M511.4 959.4V959.4Q511.4 959.3 511.6 959.3H519.5Q519.6 959.3 519.6 959.4V959.4Z"/>
-  <path class="mark-1" d="M521.6 968.0V886.6H529.8V968.0Z"/>
-  <path class="mark-2" d="M521.6 886.6V886.6Q521.6 886.0 522.2 886.0H529.2Q529.8 886.0 529.8 886.6V886.6Z"/>
-  <path class="mark-1" d="M531.8 968.0V902.9H540.0V968.0Z"/>
-  <path class="mark-2" d="M531.8 902.9V902.9Q531.8 902.6 532.1 902.6H539.7Q540.0 902.6 540.0 902.9V902.9Z"/>
-  <path class="mark-1" d="M542.0 968.0V918.8H550.2V968.0Z"/>
-  <path class="mark-2" d="M542.0 918.8V918.8Q542.0 918.3 542.5 918.3H549.7Q550.2 918.3 550.2 918.8V918.8Z"/>
-  <path class="mark-1" d="M552.2 968.0V904.3H560.4V968.0Z"/>
-  <path class="mark-2" d="M552.2 904.3V904.3Q552.2 903.8 552.7 903.8H559.9Q560.4 903.8 560.4 904.3V904.3Z"/>
-  <path class="mark-1" d="M562.4 968.0V919.5H570.6V968.0Z"/>
-  <path class="mark-2" d="M562.4 919.5V919.5Q562.4 919.0 562.9 919.0H570.0Q570.6 919.0 570.6 919.5V919.5Z"/>
-  <path class="mark-1" d="M582.8 968.0V966.5H591.0V968.0Z"/>
-  <path class="mark-2" d="M582.8 966.5V966.5Q582.8 966.3 583.0 966.3H590.8Q591.0 966.3 591.0 966.5V966.5Z"/>
-  <path class="mark-1" d="M593.0 968.0V933.8H601.2V968.0Z"/>
-  <path class="mark-2" d="M593.0 933.8V933.8Q593.0 933.5 593.3 933.5H600.8Q601.2 933.5 601.2 933.8V933.8Z"/>
-  <path class="mark-1" d="M603.2 968.0V936.4H611.4V968.0Z"/>
-  <path class="mark-2" d="M603.2 936.4V936.4Q603.2 936.1 603.5 936.1H611.0Q611.4 936.1 611.4 936.4V936.4Z"/>
-  <path class="mark-1" d="M613.4 968.0V947.3H621.6V968.0Z"/>
-  <path class="mark-2" d="M613.4 947.3V947.3Q613.4 947.1 613.6 947.1H621.3Q621.6 947.1 621.6 947.3V947.3Z"/>
-  <path class="mark-1" d="M623.6 968.0V925.7H631.8V968.0Z"/>
-  <path class="mark-2" d="M623.6 925.7V925.7Q623.6 925.3 623.9 925.3H631.4Q631.8 925.3 631.8 925.7V925.7Z"/>
-  <path class="mark-1" d="M633.8 968.0V966.0H642.0V968.0Z"/>
-  <path class="mark-2" d="M633.8 966.0V966.0Q633.8 965.9 633.8 965.9H641.9Q642.0 965.9 642.0 966.0V966.0Z"/>
-  <path class="mark-1" d="M664.3 968.0V966.5H672.5V968.0Z"/>
-  <path class="mark-2" d="M664.3 966.5V966.5Q664.3 966.4 664.4 966.4H672.5Q672.5 966.4 672.5 966.5V966.5Z"/>
-  <path class="mark-1" d="M674.5 968.0V953.1H682.7V968.0Z"/>
-  <path class="mark-2" d="M674.5 953.1V953.1Q674.5 952.9 674.8 952.9H682.5Q682.7 952.9 682.7 953.1V953.1Z"/>
-  <path class="mark-1" d="M684.7 968.0V961.6H692.9V968.0Z"/>
-  <path class="mark-2" d="M684.7 961.6V961.6Q684.7 961.4 684.9 961.4H692.8Q692.9 961.4 692.9 961.6V961.6Z"/>
-  <path class="mark-1" d="M694.9 968.0V962.1H703.1V968.0Z"/>
-  <path class="mark-2" d="M694.9 962.1V962.1Q694.9 962.0 695.1 962.0H702.9Q703.1 962.0 703.1 962.1V962.1Z"/>
-  <path class="mark-1" d="M705.1 968.0V958.7H713.3V968.0Z"/>
-  <path class="mark-2" d="M705.1 958.7V958.7Q705.1 958.6 705.3 958.6H713.2Q713.3 958.6 713.3 958.7V958.7Z"/>
-  <path class="mark-1" d="M725.5 968.0V964.7H733.7V968.0Z"/>
-  <path class="mark-2" d="M725.5 964.7V964.7Q725.5 964.6 725.6 964.6H733.6Q733.7 964.6 733.7 964.7V964.7Z"/>
-  <path class="mark-1" d="M735.7 968.0V946.5H743.9V968.0Z"/>
-  <path class="mark-2" d="M735.7 946.5V946.5Q735.7 946.4 735.9 946.4H743.7Q743.9 946.4 743.9 946.5V946.5Z"/>
-  <path class="mark-1" d="M745.9 968.0V941.9H754.1V968.0Z"/>
-  <path class="mark-2" d="M745.9 941.9V941.9Q745.9 941.4 746.3 941.4H753.7Q754.1 941.4 754.1 941.9V941.9Z"/>
-  <path class="mark-1" d="M756.1 968.0V953.3H764.3V968.0Z"/>
-  <path class="mark-2" d="M756.1 953.3V953.3Q756.1 953.0 756.4 953.0H764.0Q764.3 953.0 764.3 953.3V953.3Z"/>
-  <path class="mark-1" d="M766.3 968.0V951.9H774.5V968.0Z"/>
-  <path class="mark-2" d="M766.3 951.9V951.9Q766.3 951.7 766.5 951.7H774.3Q774.5 951.7 774.5 951.9V951.9Z"/>
-  <path class="mark-1" d="M776.5 968.0V964.7H784.7V968.0Z"/>
-  <path class="mark-2" d="M776.5 964.7V964.7Q776.5 964.6 776.5 964.6H784.6Q784.7 964.6 784.7 964.7V964.7Z"/>
-  <text x="72" y="988" class="ink-muted">Aug&#160;29</text>
+  <path class="mark-1" d="M409.5 968.0V966.9H417.6V968.0Z"/>
+  <path class="mark-2" d="M409.5 966.9V966.9Q409.5 966.9 409.5 966.9H417.6Q417.6 966.9 417.6 966.9V966.9Z"/>
+  <path class="mark-1" d="M450.2 968.0V966.7H458.4V968.0Z"/>
+  <path class="mark-2" d="M450.2 966.7V966.7Q450.2 966.7 450.3 966.7H458.4Q458.4 966.7 458.4 966.7V966.7Z"/>
+  <path class="mark-1" d="M460.4 968.0V955.2H468.6V968.0Z"/>
+  <path class="mark-2" d="M460.4 955.2V955.2Q460.4 954.9 460.7 954.9H468.4Q468.6 954.9 468.6 955.2V955.2Z"/>
+  <path class="mark-1" d="M470.6 968.0V886.5H478.8V968.0Z"/>
+  <path class="mark-2" d="M470.6 886.5V886.5Q470.6 885.9 471.2 885.9H478.2Q478.8 885.9 478.8 886.5V886.5Z"/>
+  <text class="ink value" x="474.7" y="880.92835416" text-anchor="middle">1B</text>
+  <path class="mark-1" d="M480.8 968.0V931.3H489.0V968.0Z"/>
+  <path class="mark-2" d="M480.8 931.3V931.3Q480.8 931.0 481.2 931.0H488.7Q489.0 931.0 489.0 931.3V931.3Z"/>
+  <path class="mark-1" d="M501.2 968.0V959.4H509.4V968.0Z"/>
+  <path class="mark-2" d="M501.2 959.4V959.4Q501.2 959.3 501.4 959.3H509.3Q509.4 959.3 509.4 959.4V959.4Z"/>
+  <path class="mark-1" d="M511.4 968.0V886.6H519.6V968.0Z"/>
+  <path class="mark-2" d="M511.4 886.6V886.6Q511.4 886.0 512.0 886.0H519.0Q519.6 886.0 519.6 886.6V886.6Z"/>
+  <path class="mark-1" d="M521.6 968.0V902.9H529.8V968.0Z"/>
+  <path class="mark-2" d="M521.6 902.9V902.9Q521.6 902.6 521.9 902.6H529.5Q529.8 902.6 529.8 902.9V902.9Z"/>
+  <path class="mark-1" d="M531.8 968.0V918.8H540.0V968.0Z"/>
+  <path class="mark-2" d="M531.8 918.8V918.8Q531.8 918.3 532.3 918.3H539.5Q540.0 918.3 540.0 918.8V918.8Z"/>
+  <path class="mark-1" d="M542.0 968.0V904.3H550.2V968.0Z"/>
+  <path class="mark-2" d="M542.0 904.3V904.3Q542.0 903.8 542.5 903.8H549.7Q550.2 903.8 550.2 904.3V904.3Z"/>
+  <path class="mark-1" d="M552.2 968.0V919.5H560.4V968.0Z"/>
+  <path class="mark-2" d="M552.2 919.5V919.5Q552.2 919.0 552.8 919.0H559.8Q560.4 919.0 560.4 919.5V919.5Z"/>
+  <path class="mark-1" d="M572.6 968.0V966.5H580.8V968.0Z"/>
+  <path class="mark-2" d="M572.6 966.5V966.5Q572.6 966.3 572.8 966.3H580.6Q580.8 966.3 580.8 966.5V966.5Z"/>
+  <path class="mark-1" d="M582.8 968.0V933.8H591.0V968.0Z"/>
+  <path class="mark-2" d="M582.8 933.8V933.8Q582.8 933.5 583.1 933.5H590.6Q591.0 933.5 591.0 933.8V933.8Z"/>
+  <path class="mark-1" d="M593.0 968.0V936.4H601.2V968.0Z"/>
+  <path class="mark-2" d="M593.0 936.4V936.4Q593.0 936.1 593.4 936.1H600.8Q601.2 936.1 601.2 936.4V936.4Z"/>
+  <path class="mark-1" d="M603.2 968.0V947.3H611.4V968.0Z"/>
+  <path class="mark-2" d="M603.2 947.3V947.3Q603.2 947.1 603.4 947.1H611.2Q611.4 947.1 611.4 947.3V947.3Z"/>
+  <path class="mark-1" d="M613.4 968.0V925.7H621.6V968.0Z"/>
+  <path class="mark-2" d="M613.4 925.7V925.7Q613.4 925.3 613.7 925.3H621.2Q621.6 925.3 621.6 925.7V925.7Z"/>
+  <path class="mark-1" d="M623.6 968.0V966.0H631.8V968.0Z"/>
+  <path class="mark-2" d="M623.6 966.0V966.0Q623.6 965.9 623.6 965.9H631.7Q631.8 965.9 631.8 966.0V966.0Z"/>
+  <path class="mark-1" d="M654.1 968.0V966.5H662.3V968.0Z"/>
+  <path class="mark-2" d="M654.1 966.5V966.5Q654.1 966.4 654.2 966.4H662.3Q662.3 966.4 662.3 966.5V966.5Z"/>
+  <path class="mark-1" d="M664.3 968.0V953.1H672.5V968.0Z"/>
+  <path class="mark-2" d="M664.3 953.1V953.1Q664.3 952.9 664.6 952.9H672.3Q672.5 952.9 672.5 953.1V953.1Z"/>
+  <path class="mark-1" d="M674.5 968.0V961.6H682.7V968.0Z"/>
+  <path class="mark-2" d="M674.5 961.6V961.6Q674.5 961.4 674.7 961.4H682.6Q682.7 961.4 682.7 961.6V961.6Z"/>
+  <path class="mark-1" d="M684.7 968.0V962.1H692.9V968.0Z"/>
+  <path class="mark-2" d="M684.7 962.1V962.1Q684.7 962.0 684.9 962.0H692.8Q692.9 962.0 692.9 962.1V962.1Z"/>
+  <path class="mark-1" d="M694.9 968.0V958.7H703.1V968.0Z"/>
+  <path class="mark-2" d="M694.9 958.7V958.7Q694.9 958.6 695.1 958.6H703.0Q703.1 958.6 703.1 958.7V958.7Z"/>
+  <path class="mark-1" d="M715.3 968.0V964.7H723.5V968.0Z"/>
+  <path class="mark-2" d="M715.3 964.7V964.7Q715.3 964.6 715.4 964.6H723.4Q723.5 964.6 723.5 964.7V964.7Z"/>
+  <path class="mark-1" d="M725.5 968.0V946.5H733.7V968.0Z"/>
+  <path class="mark-2" d="M725.5 946.5V946.5Q725.5 946.4 725.7 946.4H733.6Q733.7 946.4 733.7 946.5V946.5Z"/>
+  <path class="mark-1" d="M735.7 968.0V941.9H743.9V968.0Z"/>
+  <path class="mark-2" d="M735.7 941.9V941.9Q735.7 941.4 736.1 941.4H743.5Q743.9 941.4 743.9 941.9V941.9Z"/>
+  <path class="mark-1" d="M745.9 968.0V953.3H754.1V968.0Z"/>
+  <path class="mark-2" d="M745.9 953.3V953.3Q745.9 953.0 746.2 953.0H753.8Q754.1 953.0 754.1 953.3V953.3Z"/>
+  <path class="mark-1" d="M756.1 968.0V951.9H764.3V968.0Z"/>
+  <path class="mark-2" d="M756.1 951.9V951.9Q756.1 951.7 756.3 951.7H764.1Q764.3 951.7 764.3 951.9V951.9Z"/>
+  <path class="mark-1" d="M766.3 968.0V964.7H774.5V968.0Z"/>
+  <path class="mark-2" d="M766.3 964.7V964.7Q766.3 964.6 766.4 964.6H774.4Q774.5 964.6 774.5 964.7V964.7Z"/>
+  <text x="72" y="988" class="ink-muted">Aug&#160;30</text>
   <text x="530.8" y="988" text-anchor="middle" class="ink-muted">8.9B&#160;tokens&#160;·&#160;peak&#160;1B/day</text>
   <text x="989.6" y="988" text-anchor="end" class="ink-muted">today</text>
   <rect class="mark-1" x="72" y="1003" width="10" height="10" rx="2"/>
